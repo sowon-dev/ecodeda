@@ -9,4 +9,27 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+	<!-- 에러 코드별 데이터처리 : 배포시에 꼭 필요한 페이지-->
+	<!--1. 만약 404에러가 뜨면 location 아래로 이동해서 처리하겠다는 의미 
+	webcontent하위에 error폴더 생성 후 그 안에 404code.jsp생성
+		
+		
+	<error-page>
+		<error-code>404</error-code>
+		<location>
+		 	/error/404code.jsp
+		</location>
+	</error-page> 
+	
+	2. 만약 500에러가 뜨면 location 아래로 이동해서 처리하겠다는 의미 
+	webcontent하위에 error폴더 생성 후 그 안에 500code.jsp생성
+	
+	<error-page>
+		<error-code>500</error-code>
+		<location>
+			/error/500code.jsp
+		</location>
+	</error-page> -->
+	
 </web-app>

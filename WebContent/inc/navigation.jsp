@@ -16,7 +16,7 @@
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">모든강의</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">수강후기</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#community">커뮤니티</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#login">로그인 | 회원가입 </a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./login/loginForm.jsp"> 로그인 | 회원가입 </a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#mypage">마이페이지</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">회사소개</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">고객센터</a></li>
