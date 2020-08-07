@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 디비연결에 필요한 정보 저장  -->
+<Context>
+	<Resource 
+		name="jdbc/ecodDB"
+		auth="Container"
+		type="javax.sql.DataSource"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/ppecodeda"
+		username="root"
+		password="1234"
+	/>
+</Context>
