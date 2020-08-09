@@ -2,7 +2,7 @@
 <!-- 디비연결에 필요한 정보 저장  -->
 <Context>
 	<Resource 
-		name="jdbc/ecodDB"
+		name="jdbc/ecodaDB"
 		auth="Container"
 		type="javax.sql.DataSource"
 		driverClassName="com.mysql.jdbc.Driver"

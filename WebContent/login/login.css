@@ -1,9 +1,7 @@
 body {
     margin: 0;
-    color: #6a6f8c;
     background: #c8c8c8;
-    font: 600 16px/18px 'Open Sans', sans-serif
-    text-align : center;
+    font: 16px/18px 'Open Sans', sans-serif;    
 }
 
 .login-box {
@@ -20,8 +18,9 @@ body {
     width: 100%;
     height: 100%;
     position: absolute;
-    padding: 90px 70px 50px 70px;
-    background: rgba(0, 77, 77, .9)
+    padding: 50px 70px 20px 70px;
+/*  background: rgba(0, 77, 77, .9) */
+    background: rgba(254, 209, 54, 0.7);
 }
 
 .login-snip .login,
@@ -59,8 +58,9 @@ body {
 
 .login-snip .sign-in:checked+.tab,
 .login-snip .sign-up:checked+.tab {
-    color: #fff;
-    border-color: #1161ee
+    color: #1161ee;
+    border-color: #1161ee;
+	font-weight:  bolder;  
 }
 
 .login-space {
@@ -78,7 +78,7 @@ body {
 .login-space .group .input, .inputpw,
 .login-space .group .button {
     width: 100%;
-    color: #fff;
+    color: black;
     display: block
 }
 
@@ -87,7 +87,7 @@ body {
     border: none;
     padding: 15px 20px;
     border-radius: 25px;
-    background: rgba(255, 255, 255, .1)
+    background: rgba(255, 255, 255, .5)
 }
 
 .login-space .group input[data-type="password"] {
@@ -96,7 +96,6 @@ body {
 }
 
 .login-space .group .label {
-    color: #aaa;
     font-size: 12px
 }
 
@@ -136,9 +135,9 @@ body {
     transform: scale(0) rotate(0)
 }
 
-.login-space .group .check:checked+label {
+/* .login-space .group .check:checked+label {
     color: #fff
-}
+} */
 
 .login-space .group .check:checked+label .icon {
     background: #1161ee
@@ -179,7 +178,12 @@ body {
 
 a {
     color: inherit;
-    text-decoration: none
+    text-decoration: none;
+}
+
+a:HOVER{
+	color:#1161ee;
+	font-weight: bold;
 }
 
 .hr {
@@ -203,14 +207,3 @@ a {
     color: #b3b3b3
 }
 
-#idCheckBtn {
- 	text-transform: uppercase; 
-	width: 20px;
-    color: #fff;
-    display: block;
-    border: none;
-    padding: 15px 20px; 
-    border-radius: 25px;
-    background: rgba(255, 255, 255, .1);
-    background: #1161ee
-}

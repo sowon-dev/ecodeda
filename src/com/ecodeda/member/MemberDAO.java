@@ -18,7 +18,7 @@ public class MemberDAO {
 	
 	private Connection getCon() throws Exception {
 		Context init = new InitialContext();
-		DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/ecodDB");
+		DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/ecodaDB");
 		con = ds.getConnection();	
 		System.out.println("디비연결성공");
 		return con;
@@ -39,15 +39,13 @@ public class MemberDAO {
 	public void insertMember(MemberBean mb){
 		try {
 			con = getCon();
-			sql = "insert into ecod_member values (?,?,?,?,?,?)";
+			sql = "insert into ecod_member values (?,?,?,?,?,now())";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, mb.getEmail());
 			pstmt.setString(2, mb.getPw());
 			pstmt.setString(3, mb.getName());
 			pstmt.setString(4, mb.getAddr());
 			pstmt.setString(5, mb.getPhone());
-			pstmt.setTimestamp(6, mb.getReg_date());
-			
 			pstmt.executeUpdate();
 			System.out.println("insertMember성공");
 		} catch (NamingException e) {
@@ -61,5 +59,106 @@ public class MemberDAO {
 			closeDB();
 		}
 	}//insertMember메서드닫음
+	
+	//회원가입시 아이디중복체크(서블릿이용)
+	public int registerCheck(String email){
+		try{
+			con = getCon();
+			sql = "select * from ecod_member where email=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, email);
+			rs = pstmt.executeQuery();
+			if(rs.next()){ //이미 존재하는 회원인 경우
+				return 0;
+			}else{ //가입 가능한 경우
+				return 1;
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+		return -1; //데이터 베이스 오류
+	}
+	
+	//회원가입시 아이디중복체크(서블릿이용)
+	public int joinIdCheck(String email){
+		int result = -1;
+		try {
+			con = getCon();
+			sql = "select email from ecod_member where email=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, email);
+			rs = pstmt.executeQuery();
+			if(rs.next()){	
+				result = 0;
+			}else{
+				result = 1;
+			}
+			System.out.println("아이디 중복체크결과 : "+result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+		return result;
+	}//joinIdCheck 메서드닫음
+	
+	//로그인메서드
+	public int idCheck(String email, String pw){
+		int result = -1;
+		
+		try {
+			con = getCon();
+			sql = "select pw from ecod_member where email=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, email);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				if(pw.equals(rs.getString("pw"))){
+					result = 1;
+				}else{
+					result = 0;
+				}
+			}			
+			System.out.println("로그인메서드 : "+result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+		return result;
+	}//idCheck메서드 닫음
+	
+	//회원정보 가져오는 메서드 getMember:회원정보 전부 리턴 -> 테이블에 추가
+	public MemberBean getMember(String email){
+		MemberBean mb = null; //객체 레퍼런스 생성
+		try{
+		con = getCon();
+		sql = "select * from ecod_member where email=?";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, email);
+		rs = pstmt.executeQuery();
+			if(rs.next()){
+				mb = new MemberBean();
+				mb.setEmail(rs.getString("email"));
+				mb.setPw(rs.getString("pw"));
+				mb.setName(rs.getString("name"));
+				mb.setAddr(rs.getString("addr"));
+				mb.setPhone(rs.getString("phone"));
+				mb.setReg_date(rs.getTimestamp("reg_date"));
+				System.out.println("getMember메서드완료");
+			}
+			System.out.println("sql구문실행완료");
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}catch (Exception e){
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+		return mb;
+	}//getMember닫힘
+	
 	
 }//MemberDAO닫음

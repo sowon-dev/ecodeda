@@ -9,6 +9,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>이코드다 - 코딩교육의 모든 것</title>
+        <!-- favicon  -->
         <link rel="icon" type="image/x-icon" href="resources/assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
@@ -324,11 +325,11 @@
                 </form>
             </div>
         </section>
-        <!-- Footer-->
-        <jsp:include page="inc/footer.jsp"></jsp:include>
         <!-- Portfolio Modals-->
         <jsp:include page="lecture/lecture.jsp"></jsp:include>
-        
+        <!-- Footer-->
+        <jsp:include page="inc/footer.jsp"></jsp:include>
+
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
