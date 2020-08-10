@@ -7,10 +7,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>마이페이지</title>
- <!-- favicon  -->
+<!-- favicon  -->
 <link rel="icon" type="image/x-icon" href="../resources/assets/img/favicon.ico" />
-<!-- Core theme CSS (includes Bootstrap) Bootstrap core CSS -->
-<link href="../resources/css/styles.css" rel="stylesheet" />
+
 </head>
 <body id="page-top">
 <%//1.한글처리, 파라미터 
@@ -22,6 +21,7 @@ if(email == null){
 }
 MemberDAO mdao = new MemberDAO();
 MemberBean mb = mdao.getMember(email);
+System.out.println("updateForm이메일을 가져올까요? : "+email);
 %>
 <!-- Navigation-->
 <jsp:include page="../inc/navigation.jsp"></jsp:include>
@@ -34,38 +34,34 @@ if(mb != null){
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase"><%=mb.getName()%>님의 마이페이지</h2>
-	        <form id="contactForm" name="sentMessage" style="display:inline;margin:0px auto;">
-	            <div class="row align-items-stretch mb-5">
+	        <form action="updatePro.jsp" method="post" id="contactForm" style="display:inline;margin:0px auto;">
+	            <div class="row align-items-stretch mb-5" style="width: 2300px;">
 	                <div class="col-md-6">
 	                    <div class="form-group">
-	                        <input class="form-control-mypage" type="text" value="이메일" readonly></input>
-	                        <input class="form-control-mypage2" id="email" type="text" value="<%=mb.getEmail() %>" readonly/>
+	                        <input class="form-control-mypage" type="text" value="이메일" style="width: 114px;" readonly />
+	                        <input class="form-control-mypage2" id="email" type="text" value="<%=mb.getEmail() %>" style="width: 344px;" readonly/>
 	                    </div>
 	                    <div class="form-group">
-	                        <input class="form-control-mypage" type="text" value="비밀번호" readonly></input>
-	                        <input class="form-control-mypage2" id="pw" type="password" value="" readonly/>
+	                        <input class="form-control-mypage" type="text" value="비밀번호" style="width: 114px;" readonly />
+	                        <input class="form-control-mypage2" id="pw" type="password" placeholder="비밀번호를 입력하세요" style="width: 344px;" />
 	                    </div>
 	                    <div class="form-group">
-	                        <input class="form-control-mypage" type="text" value="이름" />
-	                        <input class="form-control-mypage2" id="name" type="text" value="<%=mb.getName() %>" />
+	                        <input class="form-control-mypage" type="text" value="이름" style="width: 114px;" readonly />
+	                        <input class="form-control-mypage2" id="name" type="text" value="<%=mb.getName() %>" style="width: 344px;" />
 	                    </div>
 	                    <div class="form-group">
-	                        <input class="form-control-mypage" type="text" value="연락처" />
-	                        <input class="form-control-mypage2" id="phone" type="text" value="<%=mb.getPhone() %>" />
+	                        <input class="form-control-mypage" type="text" value="연락처" style="width: 114px;" readonly />
+	                        <input class="form-control-mypage2" id="phone" type="text" value="<%=mb.getPhone() %>" style="width: 344px;" />
 	                    </div>
 	                    <div class="form-group">
-	                        <input class="form-control-mypage" type="text" value="주소" />
-	                        <input class="form-control-mypage2" id="addr" type="text" value="<%=mb.getAddr() %>" />
-	                    </div>
-	                    <div class="form-group">
-	                        <input class="form-control-mypage" type="text" value="가입일자" />
-	                        <input class="form-control-mypage2" id="reg_date" type="text" value="<%=mb.getReg_date() %>" />
+	                        <input class="form-control-mypage" type="text" value="주소" style="width: 114px;" readonly />
+	                        <input class="form-control-mypage2" id="addr" type="text" value="<%=mb.getAddr() %>" style="width: 344px;" />
 	                    </div>
 	                </div>
 	            </div>
 			<div id="success"></div>
-			<input type="button" class="btn btn-primary btn-xl text-uppercase" value="회원정보수정" class="button" onclick="location.href='updateForm.jsp'">
-			<input type="button" class="btn btn-primary btn-xl text-uppercase" value="회원탈퇴" class="button" onclick="location.href='deleteForm.jsp'">
+			<input type="button" class="btn btn-primary btn-xl text-uppercase" value="뒤로가기" class="button" onclick="location.href='./mypage.jsp'" style="padding:1rem 1.2rem">
+			<input type="button" class="btn btn-primary btn-xl text-uppercase" value="회원정보수정" class="button" onclick="location.href='./updatePro.jsp'" style="padding:1rem 1.2rem">
         	</form>
     	</div>
     </div>
@@ -75,17 +71,11 @@ if(mb != null){
 %>
 <hr>
 
-<!-- 관리자일때만 메뉴확인가능 -->
-<% if(email != null){
-	if(email.equals("admin")){ %>
-	<input type="button" value="회원전체목록(관리자용)" class="button" onclick="location.href='memberList.jsp'">
-<%
-	}
-}
-%>
+
 
 <!-- Footer-->
 <jsp:include page="../inc/footer.jsp"></jsp:include>
+
 <!-- Bootstrap core JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>

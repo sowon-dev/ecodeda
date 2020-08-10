@@ -72,6 +72,12 @@
 <!-- 유효성체크 : 데이터 빈공백체크(id와 성별) -->
 <script type="text/javascript">
 
+if(document.fr.email.value =="" || document.fr.email.value.length < 0){
+	document.getElementById("submitBtn").disabled = true;
+	document.getElementById("submitBtn").style.background = 'rgb(255, 255, 255, .1)';
+}
+
+
 //이메일중복체크
 function winopen(){
 	//새창을 열어서 페이지를 오픈 후 -> 회원아이디정보를 가지고 중복체크
@@ -79,6 +85,8 @@ function winopen(){
 	if(document.fr.email.value =="" || document.fr.email.value.length < 0){
 		alert("이메일을 입력해주세요")
 		document.fr.email.focus();
+		document.getElementById("submitBtn").disabled = true;
+		document.getElementById("submitBtn").style.background = 'rgb(255, 255, 255, .1)';
 	}else{
 		//2. 회원정보아이디를 가지고 있는 지 체크하려면 DB에 접근해야한다.
 		//자바스크립트로 어떻게 DB에 접근할까? => 파라미터로 id값을 가져가서 jsp페이지에서 진행하면 된다.

@@ -32,7 +32,7 @@ if (result == 1){
 		<div class="group"> <input type="button" class="button" value="아이디 사용하기" onclick="result();"></div>
 	<%
 }else if(result == 0){
-	out.print("이미 사용중인 이메일입니다");
+	out.print("이미 사용중인 이메일입니다.<br>다른 이메일을 적어주세요.");
 	%>
 	<p></p>
 	<%

@@ -160,5 +160,49 @@ public class MemberDAO {
 		return mb;
 	}//getMember닫힘
 	
+	//회원정보 수정 메서드
+	public int updateMember(MemberBean mb){
+		int result = -1;
+
+		try {
+			con = getCon();
+			sql = "select pw from ecod_member where email=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, mb.getEmail());
+			System.out.println("sql 이메일 : "+ mb.getEmail());
+			System.out.println("pstmt 확인 : "+pstmt);
+			rs = pstmt.executeQuery();
+			System.out.println("rs 저장확인 : "+ rs);
+			if(rs.next()){//DB에 있는 회원
+				if(mb.getPw().equals(rs.getString("pw"))){//비번일치
+					//비번일치시 정보수정 작업
+					sql = "update ecod_member set name=?,addr=?,phone=? where email=?";
+					pstmt = con.prepareStatement(sql);
+					pstmt.setString(1, mb.getName());
+					pstmt.setString(2, mb.getAddr());
+					pstmt.setString(3, mb.getPhone());
+					pstmt.setString(4, mb.getEmail());
+
+					pstmt.executeUpdate();
+					System.out.println("회원정보수정성공");
+					result = 1;
+				}else{
+					result = 0;
+					System.out.println("아디일치,비번불일치 - 회원정보수정실패");
+				}
+			}else{ //DB에 없는 회원
+				result = -1;
+				System.out.println("존재하지않는아이디 - 회원정보수정실패");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally{
+			closeDB();
+		}
+		return result;
+	}//updateMember닫힘
+	
 	
 }//MemberDAO닫음
