@@ -149,7 +149,6 @@ public class MemberDAO {
 				mb.setReg_date(rs.getTimestamp("reg_date"));
 				System.out.println("getMember메서드완료");
 			}
-			System.out.println("sql구문실행완료");
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}catch (Exception e){
@@ -170,9 +169,7 @@ public class MemberDAO {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, mb.getEmail());
 			System.out.println("sql 이메일 : "+ mb.getEmail());
-			System.out.println("pstmt 확인 : "+pstmt);
 			rs = pstmt.executeQuery();
-			System.out.println("rs 저장확인 : "+ rs);
 			if(rs.next()){//DB에 있는 회원
 				if(mb.getPw().equals(rs.getString("pw"))){//비번일치
 					//비번일치시 정보수정 작업
@@ -194,6 +191,7 @@ public class MemberDAO {
 				result = -1;
 				System.out.println("존재하지않는아이디 - 회원정보수정실패");
 			}
+			System.out.println("updateMember result: "+result);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (Exception e) {

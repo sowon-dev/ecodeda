@@ -26,12 +26,12 @@ if (email == null) {
 MemberDAO mdao = new MemberDAO();
 //4. 데이터처리 : 1-수정완료, 0-비번오류, -1-아이디없음
 int result = mdao.updateMember(mb);
-System.out.println("updatePro의 mb가 이메일을 가져올까요? : "+mb);
+System.out.println("updatePro의 mb가 이메일을 가져올까요? : "+mb+", result: "+result);
 if(result == 1){
 	%>
 	<script type="text/javascript">
 	alert("회원정보수정 성공");
-	location.href=".mypage.jsp";
+	location.href="mypage.jsp";
 	</script>
 	<%
 }else if(result == 0){
@@ -45,7 +45,7 @@ if(result == 1){
 	%>
 	<script type="text/javascript">
 	alert("존재하지않는 회원입니다.");
-	history.back();
+	location.href="mypage.jsp";
 	</script>
 	<%
 }

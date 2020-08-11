@@ -21,7 +21,6 @@ if(email == null){
 }
 MemberDAO mdao = new MemberDAO();
 MemberBean mb = mdao.getMember(email);
-System.out.println("mypage이메일을 가져올까요? : "+email);
 %>
 <!-- Navigation-->
 <jsp:include page="../inc/navigation.jsp"></jsp:include>
@@ -39,23 +38,23 @@ if(mb != null){
 	                <div class="col-md-6">
 	                    <div class="form-group">
 	                        <input class="form-control-mypage" type="text" value="이메일" style="width: 114px;" readonly />
-	                        <input class="form-control-mypage2" id="email" type="text" value="<%=mb.getEmail() %>" style="width: 344px;" readonly/>
+	                        <input class="form-control-mypage2" id="email" name="email" type="text" value="<%=mb.getEmail() %>" style="width: 344px;" readonly/>
 	                    </div>
 	                    <div class="form-group">
 	                        <input class="form-control-mypage" type="text" value="비밀번호" style="width: 114px;" readonly />
-	                        <input class="form-control-mypage2" id="pw" type="password" placeholder="비밀번호수정은 회원정보수정버튼을 눌러주세요" value="" style="width: 344px;" readonly/>
+	                        <input class="form-control-mypage2" id="pw" name="pw" type="password" placeholder="비밀번호수정은 회원정보수정버튼을 눌러주세요" value="" style="width: 344px;" readonly/>
 	                    </div>
 	                    <div class="form-group">
 	                        <input class="form-control-mypage" type="text" value="이름" style="width: 114px;" readonly />
-	                        <input class="form-control-mypage2" id="name" type="text" value="<%=mb.getName() %>" style="width: 344px;" readonly/>
+	                        <input class="form-control-mypage2" id="name" name="name" type="text" value="<%=mb.getName() %>" style="width: 344px;" readonly/>
 	                    </div>
 	                    <div class="form-group">
 	                        <input class="form-control-mypage" type="text" value="연락처" style="width: 114px;" readonly />
-	                        <input class="form-control-mypage2" id="phone" type="text" value="<%=mb.getPhone() %>" style="width: 344px;" readonly/>
+	                        <input class="form-control-mypage2" id="phone" name="phone" type="text" value="<%=mb.getPhone() %>" style="width: 344px;" readonly/>
 	                    </div>
 	                    <div class="form-group">
 	                        <input class="form-control-mypage" type="text" value="주소" style="width: 114px;" readonly/>
-	                        <input class="form-control-mypage2" id="addr" type="text" value="<%=mb.getAddr() %>" style="width: 344px;" readonly/>
+	                        <input class="form-control-mypage2" id="addr" name="addr" type="text" value="<%=mb.getAddr() %>" style="width: 344px;" readonly/>
 	                    </div>
 	                    <div class="form-group">
 	                        <input class="form-control-mypage" type="text" value="가입일자" style="width: 114px;" readonly/>
@@ -100,5 +99,6 @@ if(mb != null){
 <script src="../resources/assets/mail/contact_me.js"></script>
 <!-- Core theme JS-->
 <script src="../resources/js/scripts.js"></script>
+
 </body>
 </html>

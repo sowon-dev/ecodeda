@@ -27,9 +27,6 @@ System.out.println("updateForm이메일을 가져올까요? : "+email);
 <jsp:include page="../inc/navigation.jsp"></jsp:include>
 
 <!-- 회원정보조회-->
-<%
-if(mb != null){
-%>
 <section class="page-section" id="contact">
     <div class="container">
         <div class="text-center">
@@ -39,37 +36,61 @@ if(mb != null){
 	                <div class="col-md-6">
 	                    <div class="form-group">
 	                        <input class="form-control-mypage" type="text" value="이메일" style="width: 114px;" readonly />
-	                        <input class="form-control-mypage2" id="email" type="text" value="<%=mb.getEmail() %>" style="width: 344px;" readonly/>
+	                        <input class="form-control-mypage2" id="email" name="email" type="text" value="<%=mb.getEmail() %>" style="width: 344px;" readonly/>
 	                    </div>
 	                    <div class="form-group">
 	                        <input class="form-control-mypage" type="text" value="비밀번호" style="width: 114px;" readonly />
-	                        <input class="form-control-mypage2" id="pw" type="password" placeholder="비밀번호를 입력하세요" style="width: 344px;" />
+	                        <input class="form-control-mypage2" id="pw" name="pw" type="password" placeholder="비밀번호를 입력하세요" style="width: 344px;" required />
 	                    </div>
 	                    <div class="form-group">
 	                        <input class="form-control-mypage" type="text" value="이름" style="width: 114px;" readonly />
-	                        <input class="form-control-mypage2" id="name" type="text" value="<%=mb.getName() %>" style="width: 344px;" />
+	                        <input class="form-control-mypage2" id="name" name="name" type="text" value="<%=mb.getName() %>" style="width: 344px;" />
 	                    </div>
 	                    <div class="form-group">
 	                        <input class="form-control-mypage" type="text" value="연락처" style="width: 114px;" readonly />
-	                        <input class="form-control-mypage2" id="phone" type="text" value="<%=mb.getPhone() %>" style="width: 344px;" />
+	                        <input class="form-control-mypage2" id="phone" name="phone" type="text" value="<%=mb.getPhone() %>" style="width: 344px;" />
 	                    </div>
 	                    <div class="form-group">
 	                        <input class="form-control-mypage" type="text" value="주소" style="width: 114px;" readonly />
-	                        <input class="form-control-mypage2" id="addr" type="text" value="<%=mb.getAddr() %>" style="width: 344px;" />
+	                        <input class="form-control-mypage2" id="addr" name="addr" type="text"  value="<%=mb.getAddr() %>" style="width: 344px;" />
 	                    </div>
 	                </div>
 	            </div>
 			<div id="success"></div>
 			<input type="button" class="btn btn-primary btn-xl text-uppercase" value="뒤로가기" class="button" onclick="location.href='./mypage.jsp'" style="padding:1rem 1.2rem">
-			<input type="button" class="btn btn-primary btn-xl text-uppercase" value="회원정보수정" class="button" onclick="location.href='./updatePro.jsp'" style="padding:1rem 1.2rem">
+			<input type="button" class="btn btn-primary btn-xl text-uppercase" value="회원정보수정" class="button" id="updatePro" onclick="" style="padding:1rem 1.2rem">
         	</form>
     	</div>
     </div>
 </section>
-<% 
-} 
-%>
 <hr>
+
+<!--input벼튼 updatePro넘기기 -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" >
+$(function(){
+	$('#updatePro').click(function(){
+	    let form = {
+	            email : $('#email').val(),
+	            pw : $('#pw').val(),
+	            name : $('#name').val(),
+	            phone : $('#phone').val(),
+	            addr : $('#addr').val()
+	        };
+	    
+        $.ajax({
+            type: "POST", 
+            url: "updatePro.jsp",
+            data: form,
+			success: function(data){
+				console.log("ajax click 성공");
+			},error: function(){
+				console.log("ajax click 실패");
+			}
+		});//ajax closed
+	});//clickevent closed
+});//jquery closed
+</script>
 
 
 
