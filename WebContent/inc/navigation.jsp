@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
 <!-- Core theme CSS (includes Bootstrap) Bootstrap core CSS -->
-<link href="../resources/css/styles.css" rel="stylesheet" />
+<link href="../resources/css/nav-footer.css" rel="stylesheet" />
 <!-- Custom styles for this template  안씀-->
 <!-- <link href="resources/css/shop-homepage.css" rel="stylesheet"> -->
 
@@ -27,10 +27,10 @@ String email = (String) session.getAttribute("email");
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">강의로드맵</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../main/main.jsp">강의로드맵</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">모든강의</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">수강후기</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#community">커뮤니티</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../board/boardList.jsp">커뮤니티</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">회사소개</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">고객센터</a></li>
                 <%
