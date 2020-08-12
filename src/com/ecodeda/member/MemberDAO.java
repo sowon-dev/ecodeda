@@ -60,7 +60,7 @@ public class MemberDAO {
 		}
 	}//insertMember메서드닫음
 	
-	//회원가입시 아이디중복체크(서블릿이용)
+	//회원가입시 아이디중복체크(서블릿이용 - 실패)
 	public int registerCheck(String email){
 		try{
 			con = getCon();
@@ -81,7 +81,7 @@ public class MemberDAO {
 		return -1; //데이터 베이스 오류
 	}
 	
-	//회원가입시 아이디중복체크(서블릿이용)
+	//회원가입시 아이디중복체크(jsp이용)
 	public int joinIdCheck(String email){
 		int result = -1;
 		try {
@@ -201,6 +201,47 @@ public class MemberDAO {
 		}
 		return result;
 	}//updateMember닫힘
+	
+	//회원탈퇴 delete구현
+	public int deleteMember(String email, String pw){
+		int result = -1;
+		try {
+			//7-1. DB연결메서드 불러오기
+			con = getCon();
+			//7-2. SQL & pstmt 생성
+			sql = "select pw from ecod_member where email=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, email);
+			//7-3. 실행 -> rs저장
+			rs = pstmt.executeQuery();
+			//7-4. 데이터처리 : DB에 있는 회원인 경우 삭제, 아닌 경우 에러
+			if(rs.next()){
+				if(pw.equals(rs.getString("pw"))){
+					//7-5. 비번일치하면 정보삭제 작업
+					//7-5-1. SQL 구문작성 & pstmt 생성
+					sql = "delete from ecod_member where email=?";
+					pstmt = con.prepareStatement(sql);
+					pstmt.setString(1, email);
+					pstmt.executeUpdate();
+					result = 1;
+					System.out.println("회원삭제성공-아디일치,비번일치");
+				}else{
+					result = 0;
+					System.out.println("회원삭제실패-아디일치,비번불일치");
+				}
+			}else{
+				result = -1;
+				System.out.println("회원삭제실패-아이디불일치");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+		return result;		
+	}//delete닫힘
 	
 	
 }//MemberDAO닫음

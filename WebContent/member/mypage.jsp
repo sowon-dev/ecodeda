@@ -6,10 +6,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>마이페이지</title>
+<title>마이페이지 | 이코드다 - 코딩교육의 모든 것</title>
 <!-- favicon  -->
 <link rel="icon" type="image/x-icon" href="../resources/assets/img/favicon.ico" />
-
+<!-- Core theme CSS (includes Bootstrap) Bootstrap core CSS -->
+<link href="../resources/css/styles.css" rel="stylesheet" />
 </head>
 <body id="page-top">
 <%//1.한글처리, 파라미터 
@@ -42,7 +43,7 @@ if(mb != null){
 	                    </div>
 	                    <div class="form-group">
 	                        <input class="form-control-mypage" type="text" value="비밀번호" style="width: 114px;" readonly />
-	                        <input class="form-control-mypage2" id="pw" name="pw" type="password" placeholder="비밀번호수정은 회원정보수정버튼을 눌러주세요" value="" style="width: 344px;" readonly/>
+	                        <input class="form-control-mypage2" id="pw" name="pw" type="password" placeholder="비밀번호수정버튼을 눌러주세요" value="" style="width: 344px;" readonly/>
 	                    </div>
 	                    <div class="form-group">
 	                        <input class="form-control-mypage" type="text" value="이름" style="width: 114px;" readonly />
@@ -85,10 +86,9 @@ if(mb != null){
 <hr>
 
 
-
+ <!-- Footer랑 js랑 세트  -->
 <!-- Footer-->
 <jsp:include page="../inc/footer.jsp"></jsp:include>
-
 <!-- Bootstrap core JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>

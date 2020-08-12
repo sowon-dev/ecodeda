@@ -11,12 +11,11 @@
         <title>이코드다 - 코딩교육의 모든 것</title>
         <!-- favicon  모든페이지에 필요 -->
         <link rel="icon" type="image/x-icon" href="../resources/assets/img/favicon.ico" />
-
     </head>
     <body id="page-top">
         <!-- Navigation-->
 		<jsp:include page="../inc/navigation.jsp"></jsp:include>
-        <!-- Masthead-->
+        <!-- Masthead 메인첫 -->
         <header class="masthead">
             <div class="container">
                 <div class="masthead-subheading">Hello ECODEDA world!</div>
@@ -24,7 +23,7 @@
                 <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">지금 바로 시작</a>
             </div>
         </header>
-        <!-- Services-->
+        <!-- Services 회사소개-->
         <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center">
@@ -59,7 +58,7 @@
                 </div>
             </div>
         </section>
-        <!-- Portfolio Grid-->
+        <!-- Portfolio Grid 갤러리게시판-->
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
                 <div class="text-center">
@@ -154,7 +153,7 @@
                 </div>
             </div>
         </section>
-        <!-- About-->
+        <!-- About 강의 로드맵-->
         <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
@@ -216,7 +215,7 @@
                 </ul>
             </div>
         </section>
-        <!-- Team-->
+        <!-- Team 수강후기-->
         <section class="page-section bg-light" id="team">
             <div class="container">
                 <div class="text-center">
@@ -279,7 +278,7 @@
                 </div>
             </div>
         </div>
-        <!-- Contact-->
+        <!-- Contact 고객센터-->
         <section class="page-section" id="contact">
             <div class="container">
                 <div class="text-center">
@@ -316,11 +315,12 @@
                 </form>
             </div>
         </section>
-        <!-- Portfolio Modals-->
+        <!-- Portfolio Modals 갤러리게시판-->
         <jsp:include page="../lecture/lecture.jsp"></jsp:include>
+        
+        <!-- Footer랑 js랑 세트  -->
         <!-- Footer-->
         <jsp:include page="../inc/footer.jsp"></jsp:include>
-
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>

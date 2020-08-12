@@ -68,6 +68,8 @@ System.out.println("updateForm이메일을 가져올까요? : "+email);
 <!--input벼튼 updatePro넘기기 -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" >
+
+
 $(function(){
 	$('#updatePro').click(function(){
 	    let form = {
@@ -82,13 +84,17 @@ $(function(){
             type: "POST", 
             url: "updatePro.jsp",
             data: form,
-			success: function(data){
+			success: function(result){
+				alert(result)
 				console.log("ajax click 성공");
 			},error: function(){
 				console.log("ajax click 실패");
 			}
 		});//ajax closed
+		
 	});//clickevent closed
+	
+	
 });//jquery closed
 </script>
 
