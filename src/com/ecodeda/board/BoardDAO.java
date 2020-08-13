@@ -50,8 +50,7 @@ public class BoardDAO {
 			if(rs.next()){ 
 				num = rs.getInt(1)+1;
 			}
-			
-			System.out.println("글번호 : "+num);
+			//System.out.println("글번호 : "+num);
 			sql = "insert into ecod_board values ("
 					+"?,?,?,?,?,"
 					+"?,?,?,?,now(),"
@@ -248,7 +247,7 @@ public class BoardDAO {
 				bb.setSubject(rs.getString("subject"));
 			}
 			System.out.println("해당 글 저장 완료");
-			System.out.println(bb);
+			//System.out.println(bb);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -343,7 +342,7 @@ public class BoardDAO {
 			if(rs.next()){
 				num = rs.getInt(1)+1;
 			}
-			System.out.println(" 답글 번호 : "+num);
+			System.out.println("답글 번호 : "+num);
 			//2-2. 답글 순서 재배치
 			//re_ref(같은 그룹기준)으로 re_seq값이 기존의 값보다 큰 값이 있을경우 seq값을 1증가시킴
 			sql = "update ecod_board set re_seq=re_seq+1 "
@@ -357,7 +356,7 @@ public class BoardDAO {
 			sql="insert into ecod_board "
 					+ "values(?,?,?,?,?"
 					+ ",?,?,?,?,now()"
-					+ ",?,)";
+					+ ",?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, num);//bno는 가지고있는게 아니라 계산해서 만든것이므로 num사용
 			pstmt.setString(2, bb.getEmail());

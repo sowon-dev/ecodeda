@@ -53,10 +53,9 @@ if( email == null){
 	  	<button type="reset" class="btnn">초기화</button>
 	  	<input type="button" value="목록으로" class="btnn" onclick="location.href='boardList.jsp'">
 	</form>
-
 </fieldset>
-<hr>
 <!-- Footer랑 js랑 세트  -->
+<hr>
 <!-- Footer-->
 <jsp:include page="../inc/footer.jsp"></jsp:include>
 <!-- Bootstrap core JS-->

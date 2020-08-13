@@ -31,7 +31,7 @@ jsp:setProperty의 동작
 등등 모든 변수의 1번2번동작을 한꺼번해 처리해줌 -->
 <jsp:setProperty property="*" name="bb"/>
 <%//2-2. 전달정보 확인위한 출력 : null인 값들은 별로도 추가해줘야한다.
-System.out.println(bb); //bb.toString()과 동일한 동작
+//System.out.println(bb); //bb.toString()과 동일한 동작
 
 //3. 디비처리작업진행 : boardDAO객체 생성
 BoardDAO bdao = new BoardDAO();

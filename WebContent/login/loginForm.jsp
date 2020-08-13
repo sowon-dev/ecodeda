@@ -13,7 +13,7 @@
 <!-- Jquery -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <!--favicon -->
-<link rel="icon" type="image/x-icon" href="resources/assets/img/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="../resources/assets/img/favicon.ico" />
 <!-- Font Awesome icons (free version)-->
 <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
 <!-- Google fonts-->
@@ -90,7 +90,7 @@ function winopen(){
 	}else{
 		//2. 회원정보아이디를 가지고 있는 지 체크하려면 DB에 접근해야한다.
 		//자바스크립트로 어떻게 DB에 접근할까? => 파라미터로 id값을 가져가서 jsp페이지에서 진행하면 된다.
-		window.open("joinIdCheck.jsp?userid="+document.fr.email.value,"","width=360px, height=387px");
+		window.open("joinIdCheck.jsp?userid="+document.fr.email.value,"","width=360px, height=387px, resizable = no, scrollbars = no");
 	}
 }
 

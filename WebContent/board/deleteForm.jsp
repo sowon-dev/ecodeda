@@ -46,8 +46,8 @@ if( email == null){
 	</form>
 
 </fieldset>
-<hr>
 <!-- Footer랑 js랑 세트  -->
+<hr>
 <!-- Footer-->
 <jsp:include page="../inc/footer.jsp"></jsp:include>
 <!-- Bootstrap core JS-->

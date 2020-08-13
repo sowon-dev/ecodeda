@@ -41,7 +41,7 @@ int endRow= currentPage * pageSize;
 //currentPage가 2인경우, 2*10 = 20
 //currentPage가 3인경우, 3*10 = 30
 
-System.out.println(bdao.getBoardList());
+//System.out.println(bdao.getBoardList());
 ArrayList boardList = null;
 if(cnt != 0){
 	//일반
@@ -60,11 +60,11 @@ String email = (String) session.getAttribute("email");
 	<%
 	if(email == null){
 	%>
-	<input class="btnn" type="button" value="글쓰기" onclick="location.href='../login/loginForm.jsp'">
+	<input class="btnn" type="button" value="로그인 후 글쓰기" onclick="location.href='../login/loginForm.jsp'">
 	<%
 	}else if( email != null){
 		%>
-	<input class="btnn" type="button" value="글쓰기" onclick="location.href='writeForm.jsp'">	
+	<input class="btnn" type="button" value="글쓰기" onclick="location.href='fwriteForm.jsp'">	
 		<%
 	}
 	%>
@@ -80,6 +80,9 @@ String email = (String) session.getAttribute("email");
 	<%//반복문
 	for(int i=0;i<boardList.size(); i++){
 		BoardBean bb = (BoardBean) boardList.get(i);
+		
+		final String EMAIL_PATTERN = "([\\w.]{2})(?:[\\w.]*)(@.*)";
+		String emailMasking = bb.getEmail().replaceAll(EMAIL_PATTERN, "$1****");
 	%>
 	<tr>
 		<td><%=bb.getBno()%></td>
@@ -93,7 +96,7 @@ String email = (String) session.getAttribute("email");
 		<img src="re.gif">
 		<% } %>
 		<a style="color:black;" href="content.jsp?bno=<%=bb.getBno()%>&pageNum=<%=pageNum%>"><%=bb.getSubject()%></a></td>
-		<td><%=bb.getEmail()%></td>
+		<td><%=emailMasking%></td>
 		<td><%=bb.getReadcount()%></td>
 		<td><%=bb.getDate()%></td>
 	</tr>
@@ -154,6 +157,7 @@ if(cnt != 0){ //cnt는 전체 글 갯수
 }
 %>
 <!-- Footer랑 js랑 세트  -->
+<hr>
 <!-- Footer-->
 <jsp:include page="../inc/footer.jsp"></jsp:include>
 <!-- Bootstrap core JS-->

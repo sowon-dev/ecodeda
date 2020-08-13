@@ -24,7 +24,7 @@ if(result == 1){
 	  %>
 	   <script type="text/javascript">
 	     alert("글 수정 완료!");
-	     location.href="boardList.jsp?pageNum=<%=pageNum%>";		     
+	     location.href='boardList.jsp?pageNum=<%=pageNum%>';		     
 	   </script>		  
 	  <%
 }else if(result == 0){

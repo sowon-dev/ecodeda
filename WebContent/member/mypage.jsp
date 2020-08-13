@@ -82,10 +82,8 @@ if(mb != null){
 <% 
 } 
 %>
+<!-- Footer랑 js랑 세트  -->
 <hr>
-
-
- <!-- Footer랑 js랑 세트  -->
 <!-- Footer-->
 <jsp:include page="../inc/footer.jsp"></jsp:include>
 <!-- Bootstrap core JS-->
