@@ -1,3 +1,5 @@
+<%@page import="com.ecodeda.board.BoardBean"%>
+<%@page import="com.ecodeda.board.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -8,15 +10,20 @@
 <link rel="icon" type="image/x-icon" href="../resources/assets/img/favicon.ico" />
 <!-- 커스텀 board CSS -->
 <link href="board.css" rel="stylesheet" />
-<title>게시판 글쓰기</title>
+<title>게시판 글 수정</title>
 </head>
 <body>
 <!-- Navigation-->
 <jsp:include page="../inc/navigation.jsp"></jsp:include>
 <%
+request.setCharacterEncoding("UTF-8");
+int bno = Integer.parseInt(request.getParameter("bno"));
+String pageNum = request.getParameter("pageNum");
+
+BoardDAO bdao = new BoardDAO();
+BoardBean bb = bdao.getBoard(bno);
+
 String email = (String) session.getAttribute("email");
-
-
 if( email == null){
 	%>
 	<script type="text/javascript">
@@ -25,32 +32,22 @@ if( email == null){
 	</script>
 	<%
 }
-
-/*
-		String email = "aaccc@bbb";
-		String[] emailFormat = email.split("@"); 
-		String emailMasking = emailFormat[0];
-		System.out.println(emailMasking);
-		String last3 = emailMasking.substring(2, emailMasking.length());
-		System.out.println(last3);		
-		System.out.println("마킹된 폰번 : "+emailMasking.replace(last3, "***"));
-*/
 %>
 <fieldset id="fieldsetMe">
-<legend id="legendMe">게시판 글쓰기</legend>
-	<form action="writePro.jsp" method="post" name="fr" id="formMe">
+<legend id="legendMe">게시판 글 수정하기</legend>
+	<form action="updatePro.jsp?pageNum=<%=pageNum %>" method="post" name="fr" id="formMe">
 		<div id="centerMe">
+			<input type="hidden" name="bno" value="<%=bb.getBno() %>">
 			<input type="text" class="lableMe" value="작성자" readonly/>
-			<input type="text" name="email" class="inputMe" value="<%=email %>" readonly><br>
+			<input type="text" name="email" class="inputMe" value="<%=bb.getEmail() %>" readonly><br>
 			<input type="text" class="lableMe" value="비밀번호 " readonly/>
-			<input type="password" name="pw" class="inputMe" required><br>
+			<input type="password" name="pw" class="inputMe" placeholder="비밀번호를 입력해주세요" required><br>
 			<input type="text" class="lableMe" value="제목" readonly/>
-			<input type="text" name="subject" maxlength="15" class="inputMe" required ><br>
+			<input type="text" name="subject" maxlength="15" class="inputMe" value="<%=bb.getSubject() %>" required ><br>
 			<input type="text" class="lableMe" value="내용 " style="margin-right: 460px;" readonly/><br>
-			<textarea rows="10" cols="35" name="content" class="inputMe" placeholder="여기에 작성해주세요" style="width: 572px;" required></textarea><br>
+			<textarea rows="10" cols="35" name="content" class="inputMe" style="width: 572px;" required><%=bb.getContent() %></textarea><br>
 		</div>
-		<input type="submit" value="글등록" class="btnn">
-	  	<button type="reset" class="btnn">초기화</button>
+		<input type="submit" value="글 수정하기" class="btnn">
 	  	<input type="button" value="목록으로" class="btnn" onclick="location.href='boardList.jsp'">
 	</form>
 

@@ -10,7 +10,6 @@
 <!-- favicon  -->
 <link rel="icon" type="image/x-icon" href="../resources/assets/img/favicon.ico" />
 <!-- Core theme CSS (includes Bootstrap) Bootstrap core CSS -->
-<link href="../resources/css/styles.css" rel="stylesheet" />
 </head>
 <body id="page-top">
 <%//1.한글처리, 파라미터 

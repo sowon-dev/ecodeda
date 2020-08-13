@@ -8,13 +8,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- favicon  모든페이지에 필요 -->
 <link rel="icon" type="image/x-icon" href="../resources/assets/img/favicon.ico" />
-<!-- 커스텀 board CSS -->
-<link href="boardstyles.css" rel="stylesheet" />
 <title>게시글목록</title>
 </head>
 <body>
 <!-- Navigation-->
 <jsp:include page="../inc/navigation.jsp"></jsp:include>
+<!-- 커스텀 board CSS -->
+<link href="board.css" rel="stylesheet"/>
 <%
 BoardDAO bdao = new BoardDAO();
 int cnt = bdao.getBoardCount();
@@ -53,21 +53,20 @@ if(cnt != 0){
 //6. 게시판 모든 내용을  화면에 출력
 String email = (String) session.getAttribute("email");
 %>
-<fieldset>
-<legend>커뮤니티</legend>
+<fieldset id="fieldsetMe">
+<legend id="legendMe">커뮤니티</legend>
 	<div id="contents">
 	게시판 총 글의 수 : <%=cnt%> 개
 	<%
-	//if(email == null){
+	if(email == null){
 	%>
-	<input class="btnn" type="button" value="로그인" onclick="location.href='../main/main.jsp'">
+	<input class="btnn" type="button" value="글쓰기" onclick="location.href='../login/loginForm.jsp'">
 	<%
-	//}else if( email != null){
+	}else if( email != null){
 		%>
-	<input class="btnn" type="button" value="로그아웃" onclick="location.href='../login/logout.jsp'">
 	<input class="btnn" type="button" value="글쓰기" onclick="location.href='writeForm.jsp'">	
 		<%
-	//}
+	}
 	%>
 	<br>
 	<table id="tableMe">
@@ -93,7 +92,7 @@ String email = (String) session.getAttribute("email");
 		<img src="level.gif" width="<%=wid%>" height="15">
 		<img src="re.gif">
 		<% } %>
-		<a href="content.jsp?bno=<%=bb.getBno()%>&pageNum=<%=pageNum%>"><%=bb.getSubject()%></a></td>
+		<a style="color:black;" href="content.jsp?bno=<%=bb.getBno()%>&pageNum=<%=pageNum%>"><%=bb.getSubject()%></a></td>
 		<td><%=bb.getEmail()%></td>
 		<td><%=bb.getReadcount()%></td>
 		<td><%=bb.getDate()%></td>
@@ -152,7 +151,6 @@ if(cnt != 0){ //cnt는 전체 글 갯수
 	%>
 	</div>
 	<%
-	
 }
 %>
 <!-- Footer랑 js랑 세트  -->

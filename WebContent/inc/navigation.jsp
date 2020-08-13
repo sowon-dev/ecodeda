@@ -8,11 +8,9 @@
 <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
 <!-- Core theme CSS (includes Bootstrap) Bootstrap core CSS -->
-<link href="../resources/css/nav-footer.css" rel="stylesheet" />
+<link href="../resources/css/styles.css" rel="stylesheet" />
 <!-- Custom styles for this template  안씀-->
 <!-- <link href="resources/css/shop-homepage.css" rel="stylesheet"> -->
-
-
 <!-- Navigation-->
 <%
 String email = (String) session.getAttribute("email");
