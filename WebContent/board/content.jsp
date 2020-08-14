@@ -50,7 +50,17 @@ String emailMasking = bb.getEmail().replaceAll(EMAIL_PATTERN, "$1****");
 		</tr>
 		<tr>
 			<th>첨부파일</th>
-			<td colspan="3"><a href="D:\upfile\<%=bb.getFile()%>"><%=bb.getFile() %></a></td>
+			<%
+			if(bb.getFile() == null){
+			%>
+			<td colspan="3"><a href="#">파일없음</a></td>
+			<%
+			}else{
+				%>
+			<td colspan="3"><a href="file_down.jsp?file_name=<%=bb.getFile()%>"><%=bb.getFile() %></a></td>
+				<%
+			}
+			%>
 		</tr>
 		<tr>
 			<th>내용</th>
@@ -80,6 +90,29 @@ String emailMasking = bb.getEmail().replaceAll(EMAIL_PATTERN, "$1****");
 		</tr>
 	</table>
 </fieldset>
+<hr>
+<!-- 댓글기능추가 Disqus API -->
+<div id="disqus_thread" style="width: 1000px;margin-left: auto;margin-right: auto;"></div>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://ecodeda.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+
 <!-- Footer랑 js랑 세트  -->
 <hr>
 <!-- Footer-->

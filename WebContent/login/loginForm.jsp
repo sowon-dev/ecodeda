@@ -42,7 +42,7 @@
                         <form action="joinPro.jsp" method="post" class="sign-up-form" id="join" name="fr">
                             <div class="group"> <label for="email" class="label">이메일
                             	<input type="button" class="button" onclick="winopen();" value="중복 확인" style="font-size:12px;width:80px;display:inline;padding:5px 0;margin-bottom:3px;color:white;"><br> </label>
-                            	<input id="email" name="email" type="email" class="input" onkeyup="emailCheckFunc()" placeholder="이메일 주소를 입력해주세요(아이디로 사용됩니다)." required> 
+                            	<input id="email" name="email" type="email" class="input" onkeyup="emailCheckFunc()" placeholder="이메일 주소를 입력해주세요(아이디로 사용됩니다)." minlength=5 required> 
                             	<div id="emaillcheckMsg" style="font-size:12px; display:none; margin-bottom:-5px; margin-bottom:5px; font-weight:bold; text-align:center;"></div>
                             </div>
                             <div class="group"> <label for="pass" class="label">비밀번호</label> <input name="pw" type="password" class="inputpw" data-type="password" onkeyup="pwCheckFunc()" placeholder="영문숫자특수문자혼합 8자리이상 입력해주세요" required> </div>
