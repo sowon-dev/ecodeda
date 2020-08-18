@@ -15,206 +15,97 @@
     <body id="page-top">
         <!-- Navigation-->
 		<jsp:include page="../inc/navigation.jsp"></jsp:include>
+		
         <!-- Masthead 메인첫 -->
         <header class="masthead">
             <div class="container">
                 <div class="masthead-subheading">Hello ECODEDA world!</div>
                 <div class="masthead-heading text-uppercase">코딩이 막막하세요?</div>
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">지금 바로 시작</a>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#about">지금 바로 시작</a>
             </div>
         </header>
-        <!-- Services 회사소개-->
-        <section class="page-section" id="services">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Services</h2>
-                    <h3 class="section-subheading text-muted">Simple is the best. 확실히 실무에 필요한 지식들만 제공합니다.</h3>
-                </div>
-                <div class="row text-center">
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">수강생 만족을 먼저 생각하는 이코드다</h4>
-                        <p class="text-muted">강의 먼저 들으시고 결제하세요. 수강생 만족이 최우선.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">수강생 입장에서 먼저 생각하는 이코드다</h4>
-                        <p class="text-muted">원격지원 예약서비스로 모르는 부분, 답답한 부분, 잘 안 풀리는 부분 확실하게 잡아드립니다.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">서비스소개</h4>
-                        <p class="text-muted">회사소개</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+
         <!-- Portfolio Grid 갤러리게시판-->
         <section class="page-section bg-light" id="portfolio">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="../resources/assets/img/portfolio/01-thumbnail.jpg" alt="" />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Threads</div>
-                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="../resources/assets/img/portfolio/02-thumbnail.jpg" alt="" />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Explore</div>
-                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="../resources/assets/img/portfolio/03-thumbnail.jpg" alt="" />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Finish</div>
-                                <div class="portfolio-caption-subheading text-muted">Identity</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="../resources/assets/img/portfolio/04-thumbnail.jpg" alt="" />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Lines</div>
-                                <div class="portfolio-caption-subheading text-muted">Branding</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="../resources/assets/img/portfolio/05-thumbnail.jpg" alt="" />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Southwest</div>
-                                <div class="portfolio-caption-subheading text-muted">Website Design</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="../resources/assets/img/portfolio/06-thumbnail.jpg" alt="" />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Window</div>
-                                <div class="portfolio-caption-subheading text-muted">Photography</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+			<jsp:include page="../lecture/lectureGrid.jsp"></jsp:include>
         </section>
+        
         <!-- About 강의 로드맵-->
         <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading text-uppercase">강의로드맵</h2>
+                    <h3 class="section-subheading text-muted">처음이라 막막하시다구요? 로드맵만 따라가면 당신도 주니어 엔지니어!</h3>
                 </div>
                 <ul class="timeline">
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="../resources/assets/img/about/1.jpg" alt="" /></div>
+                        <div class="timeline-image"><a href="https://www.opentutorials.org/course/3084">
+                        	<img class="rounded-circle img-fluid" src="../resources/assets/img/about/1resize.png" alt=""/></a>
+                        </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>2009-2011</h4>
-                                <h4 class="subheading">Our Humble Beginnings</h4>
+                                <h4>WEB페이지 만들기</h4>
+                                <h4 class="subheading">언어 : HTML CSS </h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">더이상 지루한 문법공부는 그만! WEB페이지를 함께 만들어보면서 프로그래밍의 기초를 다듬어보세요!</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="../resources/assets/img/about/2.jpg" alt="" /></div>
+                        <div class="timeline-image"><a href="https://www.opentutorials.org/course/3085">
+                        	<img class="rounded-circle img-fluid" src="../resources/assets/img/about/2resize.png" alt="" /></a>
+                        </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>March 2011</h4>
-                                <h4 class="subheading">An Agency is Born</h4>
+                                <h4>WEB페이지 더 멋있게 만들기</h4>
+                                <h4 class="subheading">언어 : JavaScript</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">정적 WEB페이지라 지루하셨다구요? JS로 움직임의 날개를 달아보세요!</p></div>
                         </div>
                     </li>
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="../resources/assets/img/about/3.jpg" alt="" /></div>
+                        <div class="timeline-image"><a href="https://www.youtube.com/playlist?list=PLcqDmjxt30RtqbStQqk-eYMK8N-1SYIFn">
+                        	<img class="rounded-circle img-fluid" src="../resources/assets/img/about/react.jpg" alt="" /></a>
+                        </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>December 2012</h4>
-                                <h4 class="subheading">Transition to Full Service</h4>
+                                <h4>웹게임 만들기</h4>
+                                <h4 class="subheading">언어 : React</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">홈페이지 만들기가 지겹다면? 웹게임을 만들어봐요!</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="../resources/assets/img/about/4.jpg" alt="" /></div>
+                        <div class="timeline-image"><a href="https://www.youtube.com/playlist?list=PLRx0vPvlEmdAdWCQeUPnyMZ4PsW3dGuFB">
+                        	<img class="rounded-circle img-fluid" src="../resources/assets/img/about/jsp.png" alt="" /></a></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>July 2014</h4>
-                                <h4 class="subheading">Phase Two Expansion</h4>
+                                <h4>강의평가 웹사이트 만들기</h4>
+                                <h4 class="subheading">언어 : JSP</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">강의평가 웹사이트를 만들어보며 백앤드의 매력에 빠져보아요!</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><a href="https://www.youtube.com/playlist?list=PLuHgQVnccGMA8iwZwrGyNXCGy2LAAsTXk">
+                        	<img class="rounded-circle img-fluid" src="../resources/assets/img/about/git.png" alt="" /></a></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>협업을 위한 버전관리</h4>
+                                <h4 class="subheading">GIT</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">협업의 기본 툴인 버전관리소프트웨어 Git과 커멘트명령어 마스터!!</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image">
-                            <h4>
-                                Be Part
-                                <br />
-                                Of Our
-                                <br />
-                                Story!
+                            <h4>주니어<br />개발자로<br />이직성공!
                             </h4>
                         </div>
                     </li>
                 </ul>
             </div>
         </section>
+        
         <!-- Team 수강후기-->
         <section class="page-section bg-light" id="team">
             <div class="container">
@@ -259,25 +150,43 @@
                 </div>
             </div>
         </section>
-        <!-- Clients-->
-        <div class="py-5">
+
+        <!-- Services 회사소개-->
+        <section class="page-section" id="services">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid d-block mx-auto" src="../resources/assets/img/logos/envato.jpg" alt="" /></a>
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Services</h2>
+                    <h3 class="section-subheading text-muted">Simple is the best. 확실히 실무에 필요한 지식들만 제공합니다.</h3>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">수강생 먼저</h4>
+                        <p class="text-muted">강의 먼저 들으시고 결제하세요. 수강생 만족이 최우선.</p>
                     </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid d-block mx-auto" src="../resources/assets/img/logos/designmodo.jpg" alt="" /></a>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">1대1과외</h4>
+                        <p class="text-muted">원격지원 예약서비스로 모르는 부분, 답답한 부분, 잘 안 풀리는 부분 확실하게 잡아드립니다.</p>
                     </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid d-block mx-auto" src="../resources/assets/img/logos/themeforest.jpg" alt="" /></a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid d-block mx-auto" src="../resources/assets/img/logos/creative-market.jpg" alt="" /></a>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">안심지원</h4>
+                        <p class="text-muted">취업지원까지 체계적으로 끝까지 될때까지 도와드립니다</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+        
         <!-- Contact 고객센터-->
         <section class="page-section" id="contact">
             <div class="container">
@@ -315,8 +224,9 @@
                 </form>
             </div>
         </section>
+        
         <!-- Portfolio Modals 갤러리게시판-->
-        <jsp:include page="../lecture/lecture.jsp"></jsp:include>
+        <jsp:include page="../lecture/lectureModals.jsp"></jsp:include>
         
         <!-- Footer랑 js랑 세트  -->
         <!-- Footer-->
