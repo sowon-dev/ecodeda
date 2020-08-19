@@ -39,8 +39,8 @@
                 </div>
                 <ul class="timeline">
                     <li>
-                        <div class="timeline-image"><a href="https://www.opentutorials.org/course/3084">
-                        	<img class="rounded-circle img-fluid" src="../resources/assets/img/about/1resize.png" alt=""/></a>
+                        <div class="timeline-image"><a href="../lecture/lectureFrame.jsp?url=youtu.be/tZooW6PritE">
+                        	<img class="rounded-circle img-fluid" src="../resources/assets/img/about/1resize.png" alt="클릭하면 무료강의로 이동합니다"/></a>
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -52,7 +52,7 @@
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image"><a href="https://www.opentutorials.org/course/3085">
-                        	<img class="rounded-circle img-fluid" src="../resources/assets/img/about/2resize.png" alt="" /></a>
+                        	<img class="rounded-circle img-fluid" src="../resources/assets/img/about/2resize.png" alt="클릭하면 무료강의로 이동합니다" /></a>
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -64,7 +64,7 @@
                     </li>
                     <li>
                         <div class="timeline-image"><a href="https://www.youtube.com/playlist?list=PLcqDmjxt30RtqbStQqk-eYMK8N-1SYIFn">
-                        	<img class="rounded-circle img-fluid" src="../resources/assets/img/about/react.jpg" alt="" /></a>
+                        	<img class="rounded-circle img-fluid" src="../resources/assets/img/about/react.jpg" alt="클릭하면 무료강의로 이동합니다" /></a>
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -76,7 +76,7 @@
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image"><a href="https://www.youtube.com/playlist?list=PLRx0vPvlEmdAdWCQeUPnyMZ4PsW3dGuFB">
-                        	<img class="rounded-circle img-fluid" src="../resources/assets/img/about/jsp.png" alt="" /></a></div>
+                        	<img class="rounded-circle img-fluid" src="../resources/assets/img/about/jsp.png" alt="클릭하면 무료강의로 이동합니다" /></a></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>강의평가 웹사이트 만들기</h4>
