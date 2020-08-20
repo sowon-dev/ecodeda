@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-Frame-Options" content="deny" />
 <!-- favicon  모든페이지에 필요 -->
 <link rel="icon" type="image/x-icon" href="../resources/assets/img/favicon.ico" />
 <title>강의보기</title>
@@ -13,7 +12,6 @@
 <%
 String url = request.getParameter("url");
 HttpServletResponse res = (HttpServletResponse)response;
-res.addHeader("X-FRAME-OPTIONS", "DENY");
 %>
 
 <!-- Navigation-->
@@ -25,8 +23,8 @@ res.addHeader("X-FRAME-OPTIONS", "DENY");
 <legend id="legendMe">강의보기</legend>
 	<div id="contents">
 <!-- 아이프레임  -->
-<iframe id="vime-embed-1" frameborder="0" allowfullscreen="" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" class="iframe100" 
-	src="https://<%=url%>"></iframe>
+<iframe width="1280" height="720" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="iframe100" 
+	src="https://www.youtube.com/embed/<%=url%>"></iframe>
 	</div>
 </fieldset>
 
