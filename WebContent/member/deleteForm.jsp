@@ -4,24 +4,46 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- favicon  모든페이지에 필요 -->
+<link rel="icon" type="image/x-icon" href="../resources/assets/img/favicon.ico" />
+<!-- 커스텀 board CSS -->
+<link href="../board/board.css" rel="stylesheet" />
 <title>회원탈퇴</title>
 </head>
 <body>
+<!-- Navigation-->
+<jsp:include page="../inc/navigation.jsp"></jsp:include>
 <%
 String email = (String) session.getAttribute("email");
 if( email == null ){
 	 response.sendRedirect("../login/loginForm.jsp");
 }
 %> 
-<fieldset>
-	<legend>회원탈퇴</legend>
-	<form action="deletePro.jsp" method="post">
+<fieldset id="fieldsetMe">
+	<legend id="legendMe">회원탈퇴</legend>
+	<form action="deletePro.jsp" method="post" id="formMe">
 	<!-- input타입중 hidden은 화면에 있는 해당 input태그를 숨겨서 정보 전달   -->
-		이메일 : <input type="hidden" name="email" value="<%=email %>" readonly><br>
-		비밀번호 : <input type="password" name="pw"><br>
-		<input type="submit" value="탈퇴하기">
-		<input type="button" value="뒤로가기" onclick="location.href='../main/main.jsp'">
+		<input type="text" class="lableMe" value="이메일" readonly/>
+		<input type="text" name="email" class="inputMe" value="<%=email %>" readonly><br>
+		<input type="text" class="lableMe" value="비밀번호" readonly/>
+		<input type="password" name="pw" class="inputMe"><br>
+		<input type="submit" value="탈퇴하기" class="btnn">
+		<input type="button" value="뒤로가기" class="btnn" onclick="location.href='../main/main.jsp'">
 	</form>
 </fieldset>
+<!-- Footer랑 js랑 세트  -->
+<hr>
+<!-- Footer-->
+<jsp:include page="../inc/footer.jsp"></jsp:include>
+<!-- Bootstrap core JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<!-- Third party plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<!-- Contact form JS-->
+<script src="../resources/assets/mail/jqBootstrapValidation.js"></script>
+<script src="../resources/assets/mail/contact_me.js"></script>
+<!-- Core theme JS-->
+<script src="../resources/js/scripts.js"></script>
 </body>
 </html>

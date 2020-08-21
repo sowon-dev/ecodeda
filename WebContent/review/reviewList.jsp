@@ -1,26 +1,30 @@
-<%@page import="com.ecodeda.board.*"%>
+<%@page import="com.ecodeda.review2.*"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+request.setCharacterEncoding("UTF-8");
+String cp = request.getContextPath();
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- favicon  모든페이지에 필요 -->
 <link rel="icon" type="image/x-icon" href="../resources/assets/img/favicon.ico" />
-<title>게시글목록</title>
+<title>수강후기목록</title>
 </head>
 <body>
 <!-- Navigation-->
 <jsp:include page="../inc/navigation.jsp"></jsp:include>
 <!-- 커스텀 board CSS -->
-<link href="board.css" rel="stylesheet"/>
+<link href="../board/board.css" rel="stylesheet"/>
 <%
-BoardDAO bdao = new BoardDAO();
-int cnt = bdao.getBoardCount();
+ReviewDAO rdao = new ReviewDAO();
+int cnt = rdao.getReviewCount();
 
 //7. 페이징처리 (이미 유명한 알고리즘 공식, 사용법만 알면 됨)
-//7-1. 한 페이지에서 보여줄 글의 개수 설정(5개, 변경가능)
 int pageSize = 10; 
 //7-2. 지금 내가 몇페이지에 있는 확인
 //페이지번호는 숫자인데 왜 String으로 하는지 ? => 연산을 할 것이 아니라서
@@ -42,64 +46,54 @@ int endRow= currentPage * pageSize;
 //currentPage가 3인경우, 3*10 = 30
 
 //System.out.println(bdao.getBoardList());
-ArrayList boardList = null;
+ArrayList reviewList = null;
 if(cnt != 0){
 	//일반
 	//boardList = bdao.getBoardList();
 	//7-6. 페이징 처리한 리스트 호출 => getBoardList()메서드만들기(메서드 오버로딩)
-	boardList = bdao.getBoardList(startRow, pageSize);
+	reviewList = rdao.getReviewList(startRow, pageSize);
 } 
 
 //6. 게시판 모든 내용을  화면에 출력
 String email = (String) session.getAttribute("email");
 %>
 <fieldset id="fieldsetMe">
-<legend id="legendMe">커뮤니티</legend>
+<legend id="legendMe">수강후기</legend>
 	<div id="contents">
-	게시판 총 글의 수 : <%=cnt%> 개
+	 총 수강후기 수 : <%=cnt%> 개
 	<%
 	if(email == null){
 	%>
-	<input class="btnn" type="button" value="로그인 후 글쓰기" onclick="location.href='../login/loginForm.jsp'">
+	<input class="btnn" type="button" value="로그인 후 수강후기작성" onclick="location.href='../login/loginForm.jsp'">
 	<%
 	}else if( email != null){
 		%>
-	<input class="btnn" type="button" value="글쓰기" onclick="location.href='fwriteForm.jsp'">	
+	<input class="btnn" type="button" value="수강후기작성" onclick="location.href='fwriteForm.jsp'">	
 		<%
 	}
-	%>
-	<br>
-	<table id="tableMe">
-	<tr>
-		<th>글번호</th>
-		<th>제목</th>
-		<th>작성자</th>
-		<th>조회수</th>
-		<th>작성일</th>
-	</tr>
-	<%//반복문
-	for(int i=0;i<boardList.size(); i++){
-		BoardBean bb = (BoardBean) boardList.get(i);
+	//반복문
+	for(int i=0;i<reviewList.size(); i++){
+		ReviewBean rb = (ReviewBean) reviewList.get(i);
 		
 		final String EMAIL_PATTERN = "([\\w.]{2})(?:[\\w.]*)(@.*)";
-		String emailMasking = bb.getEmail().replaceAll(EMAIL_PATTERN, "$1****");
+		String emailMasking = rb.getEmail().replaceAll(EMAIL_PATTERN, "$1****");
+	
 	%>
+	<br>
+	<table id="tableReview">
 	<tr>
-		<td><%=bb.getBno()%></td>
 		<td>
-		<%
-		int wid = 0;
-		if(bb.getRe_lev() > 0){
-			wid= 10 * bb.getRe_lev(); //레벨값의 10을 곱한 값만큼 이미지 가로길이를 길게해줌
-		%>
-		<img src="level.gif" width="<%=wid%>" height="15">
-		<img src="re.gif">
-		<% } %>
-		<a style="color:black;" href="content.jsp?bno=<%=bb.getBno()%>&pageNum=<%=pageNum%>"><%=bb.getSubject()%></a>
+			<a style="color:black;" href="content.jsp?bno=<%=rb.getBno()%>&pageNum=<%=pageNum%>">
+			<img src="../resources/assets/img/team/1.jpg"></a>
 		</td>
-		<td><%=emailMasking%></td>
-		<td><%=bb.getReadcount()%></td>
-		<td><%=bb.getDate()%></td>
+	</tr>
+	<tr>
+		<th>
+			<%=emailMasking%>님의 솔직 후기: 
+			<a href="content.jsp?bno=<%=rb.getBno()%>&pageNum=<%=pageNum%>"><%=rb.getSubject()%>
+			</a>
+			  | 작성일: <%=rb.getDate()%>
+		</th>
 	</tr>
 	<%
 	}
@@ -136,20 +130,20 @@ if(cnt != 0){ //cnt는 전체 글 갯수
 	<%
 	if(startPage > pageBlock){
 		%>
-		<a href="boardList.jsp?pageNum=<%=startPage-pageBlock%>">   이전   </a>
+		<a href="reviewList.jsp?pageNum=<%=startPage-pageBlock%>">   이전   </a>
 		<%
 	}
 	
 	//숫자
 	for(int i=startPage; i<=endPage; i++){
 		%>
-		<a href ="boardList.jsp?pageNum=<%=i%>">   <%=i%>   </a>
+		<a href ="reviewList.jsp?pageNum=<%=i%>">   <%=i%>   </a>
 		<%
 	}
 	//다음
 	if(endPage < pageCount){
 		%>
-		<a href ="boardList.jsp?pageNum=<%=startPage+pageBlock%>">   다음   </a>
+		<a href ="reviewList.jsp?pageNum=<%=startPage+pageBlock%>">   다음   </a>
 		<%
 	}
 	%>

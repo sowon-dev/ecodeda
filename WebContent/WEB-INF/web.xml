@@ -51,13 +51,16 @@
 	<url-pattern>/userRegister</url-pattern>
 </servlet-mapping> -->
 
-<servlet>
-	<servlet-name>UserRegisterCheckServlet</servlet-name>
-	<servlet-class>com.ecodeda.member.UserRegisterCheckServlet</servlet-class>
-</servlet>
-<servlet-mapping>
-	<servlet-name>UserRegisterCheckServlet</servlet-name>
-	<url-pattern>/userRegisterCheck</url-pattern>
-</servlet-mapping>
+ <servlet>
+	<servlet-name>imageServlet</servlet-name>
+ 	<servlet-class>com.ecodeda.servlet.ImageServlet</servlet-class>
+ </servlet>
+
+ <servlet-mapping>
+ 	<servlet-name>imageServlet</servlet-name>
+ 	<url-pattern>/image/*</url-pattern>
+ </servlet-mapping>
+
+
 
 </web-app>
