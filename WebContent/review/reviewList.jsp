@@ -58,8 +58,10 @@ if(cnt != 0){
 String email = (String) session.getAttribute("email");
 %>
 <fieldset id="fieldsetMe">
-<legend id="legendMe">수강후기</legend>
-	<div id="contents">
+<legend id="legendMe"></legend>
+  	<div class="text-center page-section bg-light contents">
+        <h2 class="section-heading text-uppercase">솔직한 수강후기</h2>
+        <h3 class="section-subheading text-muted container">수강생들의 순도100% 솔직한 강의평가를 확인하세요</h3>
 	 총 수강후기 수 : <%=cnt%> 개
 	<%
 	if(email == null){
@@ -68,7 +70,7 @@ String email = (String) session.getAttribute("email");
 	<%
 	}else if( email != null){
 		%>
-	<input class="btnn" type="button" value="수강후기작성" onclick="location.href='fwriteForm.jsp'">	
+	<input class="btnn" type="button" value="수강후기작성" onclick="location.href='../review/fwriteForm.jsp'">	
 		<%
 	}
 	//반복문
@@ -77,9 +79,10 @@ String email = (String) session.getAttribute("email");
 		
 		final String EMAIL_PATTERN = "([\\w.]{2})(?:[\\w.]*)(@.*)";
 		String emailMasking = rb.getEmail().replaceAll(EMAIL_PATTERN, "$1****");
-	
 	%>
+	</div>
 	<br>
+	<div id="contents">
 	<table id="tableReview">
 	<tr>
 		<td>

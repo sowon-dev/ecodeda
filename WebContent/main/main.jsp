@@ -107,7 +107,7 @@
         </section>
         
         <!-- Team 수강후기-->
-        <section class="page-section bg-light" id="team">
+<!--         <section class="page-section bg-light" id="team">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">솔직한 수강후기</h2>
@@ -149,6 +149,9 @@
                     <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
                 </div>
             </div>
+        </section> -->
+        <section class="page-section bg-light" id="team">
+			<jsp:include page="../review/reviewList.jsp"></jsp:include>
         </section>
 
         <!-- Services 회사소개-->
