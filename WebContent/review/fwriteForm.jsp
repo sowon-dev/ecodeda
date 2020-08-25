@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 request.setCharacterEncoding("UTF-8");
-String cp = request.getContextPath();
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -40,7 +38,7 @@ if( email == null){
 			<input type="text" class="lableMe" value="제목" readonly/>
 			<input type="text" name="subject" maxlength="15" class="inputMe" required ><br>
 			<input type="text" class="lableMe" value="이미지" readonly/>
-			<input type="file" name="uploadFile" class="inputMe">
+			<input type="file" name="file" class="inputMe">
 			<input type="text" class="lableMe" value="수강후기" style="margin-right: 460px;" readonly/><br>
 			<textarea rows="10" cols="35" name="content" class="inputMe" placeholder="여기에 작성해주세요" style="width: 572px;" required></textarea><br>
 		</div>
@@ -60,10 +58,10 @@ if( email == null){
 	        return;
 	    }
 	    f.subject.value = str;
-	    str = f.uploadFile.value;
+	    str = f.file.value;
 	    if(!str) {
 	        alert("이미지 파일은 필수입니다. 자신의 사진이 아닐경우 무통보삭제조치하며 적립금이 자동으로 회수됩니다.");
-	        f.uploadFile.focus();
+	        f.file.focus();
 	        return;
 	    }
 	    f.action="fileUploadPro.jsp"

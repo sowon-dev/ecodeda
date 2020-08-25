@@ -44,6 +44,8 @@ if( email == null){
 			<input type="password" name="pw" class="inputMe" placeholder="비밀번호를 입력해주세요" required><br>
 			<input type="text" class="lableMe" value="제목" readonly/>
 			<input type="text" name="subject" maxlength="15" class="inputMe" value="<%=rb.getSubject() %>" required ><br>
+			<input type="text" class="lableMe" value="파일" readonly/>
+			<input type="file" name="file" class="inputMe" value="<%=rb.getFile() %>" required>
 			<input type="text" class="lableMe" value="내용 " style="margin-right: 460px;" readonly/><br>
 			<textarea rows="10" cols="35" name="content" class="inputMe" style="width: 572px;" required><%=rb.getContent() %></textarea><br>
 		</div>

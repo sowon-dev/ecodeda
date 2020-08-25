@@ -43,6 +43,26 @@ String emailMasking = rb.getEmail().replaceAll(EMAIL_PATTERN, "$1****");
 			<td colspan="3"><%=rb.getSubject()%></td>
 		</tr>
 		<tr>
+			<th>이미지</th>
+			<%
+			//이미지경로 파라미터로 불러오기
+			String uploadPath = request.getParameter("uploadPath");
+			System.out.println("콘텐츠페이지의uploadPath"+uploadPath);
+			
+			if(rb.getFile() == null){
+			%>
+			<td colspan="3"><a href="#">이미지파일없음</a></td>
+			<%
+			}else{
+				%>
+			<td colspan="3" disabled>
+				<%-- <a href="file_down.jsp?file_name=<%=rb.getFile()%>"> </a>--%>
+				<img src="<%=uploadPath%>/<%=rb.file%>"></td>
+				<%
+			}
+			%>
+		</tr>
+		<tr>
 			<th>내용</th>
 			<td colspan="3" height="300px" width="700px"><%=rb.getContent()%></td>
 		</tr>

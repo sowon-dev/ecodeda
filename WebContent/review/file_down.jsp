@@ -23,6 +23,10 @@ System.out.println("DownloadPath : "+DownloadPath);
 //3-2. 다운로드할 파일의 전체 경로
 //역슬러시 두개는 이스케이프문자로서 역슬러시 1개만 표현됨
 String FilePath = DownloadPath+"\\"+filename;
+
+%>
+
+<%
 //여기까지다운로드기능완료
 
 //4. 데이터 응답처리를 다운로드 형태로 구현

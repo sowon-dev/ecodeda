@@ -5,7 +5,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 request.setCharacterEncoding("UTF-8");
-String cp = request.getContextPath();
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -21,6 +20,10 @@ String cp = request.getContextPath();
 <!-- 커스텀 board CSS -->
 <link href="../board/board.css" rel="stylesheet"/>
 <%
+//이미지경로 파라미터로 불러오기
+String uploadPath = request.getParameter("uploadPath");
+System.out.println("리뷰리스트페이지의 uploadPath: "+uploadPath);
+
 ReviewDAO rdao = new ReviewDAO();
 int cnt = rdao.getReviewCount();
 
@@ -86,14 +89,20 @@ String email = (String) session.getAttribute("email");
 	<table id="tableReview">
 	<tr>
 		<td>
-			<a style="color:black;" href="content.jsp?bno=<%=rb.getBno()%>&pageNum=<%=pageNum%>">
+			<%-- <a style="color:black;" href="../review/content.jsp?bno=<%=rb.getBno()%>&pageNum=<%=pageNum%>"> --%>
+			<a style="color:black;" onclick="javascript:document.aPost.submit();">
+			<form name="aPost" method="POST" action="../review/content.jsp">				
+				<input type="hidden" name="bno" value="<%=rb.getBno()%>">
+				<input type="hidden" name="pageNum" value="<%=pageNum%>">
+				<input type="hidden" name="uploadPath" value="<%=uploadPath%>">
+			</form>
 			<img src="../resources/assets/img/team/1.jpg"></a>
 		</td>
 	</tr>
 	<tr>
 		<th>
 			<%=emailMasking%>님의 솔직 후기: 
-			<a href="content.jsp?bno=<%=rb.getBno()%>&pageNum=<%=pageNum%>"><%=rb.getSubject()%>
+			<a href="../review/content.jsp?bno=<%=rb.getBno()%>&pageNum=<%=pageNum%>"><%=rb.getSubject()%>
 			</a>
 			  | 작성일: <%=rb.getDate()%>
 		</th>
@@ -154,6 +163,13 @@ if(cnt != 0){ //cnt는 전체 글 갯수
 	<%
 }
 %>
+
+<!-- a태그 post방식으로 전송  -->
+<script type="text/javascript">
+
+</script>
+
+
 <!-- Footer랑 js랑 세트  -->
 <hr>
 <!-- Footer-->

@@ -52,21 +52,25 @@ rb.setSubject(multi.getParameter("subject"));
 rb.setContent(multi.getParameter("content"));
 // bb.setFile(multi.getParameter("file")); //DB에 파일저장 불가->아래코드로 진행
 rb.setFile(multi.getFilesystemName("file"));
+rb.setFilename(multi.getParameter("filename"));
+System.out.println(rb.getFilename());
 ReviewDAO rdao = new ReviewDAO();
 rdao.insertReview(rb);
-response.sendRedirect("reviewList.jsp");
+//response.sendRedirect("contents.jsp");
 }catch(Exception e){
 	e.printStackTrace();
 }
 %>
 
-<form action="reviewList.jsp" method="post" name="filecheck">
+<form action="reviewList.jsp" method="post" name="fr">
 	<input type="hidden" name="email" value="<%=email%>"><br>
 	<input type="hidden" name="subject" value="<%=subject%>"><br>
 	<input type="hidden" name="filename" value="<%=filename%>"><br>
 	<input type="hidden" name="ofilename" value="<%=OFilename%>"><br>   
 	<input type="hidden" name="uploadPath" value="<%=uploadPath%>"><br>   
 </form>
+
+<script>document.fr.submit();</script>
 
 </body>
 </html>
