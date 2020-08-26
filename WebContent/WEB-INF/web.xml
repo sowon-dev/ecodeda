@@ -51,7 +51,7 @@
 	<url-pattern>/userRegister</url-pattern>
 </servlet-mapping> -->
 
- <servlet>
+<!--  <servlet>
 	<servlet-name>imageServlet</servlet-name>
  	<servlet-class>com.ecodeda.servlet.ImageServlet</servlet-class>
  </servlet>
@@ -59,7 +59,7 @@
  <servlet-mapping>
  	<servlet-name>imageServlet</servlet-name>
  	<url-pattern>/image/*</url-pattern>
- </servlet-mapping>
+ </servlet-mapping> -->
 
 
 

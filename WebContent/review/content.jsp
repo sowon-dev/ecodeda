@@ -54,12 +54,13 @@ String emailMasking = rb.getEmail().replaceAll(EMAIL_PATTERN, "$1****");
 			<td colspan="3"><a href="#">이미지파일없음</a></td>
 			<%
 			}else{
-				if(uploadPath == null) uploadPath ="D:/PersonalProject/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ecodeda/upload";
 				%>
 			<td colspan="3" disabled>
-				<%-- <a href="file_down.jsp?file_name=<%=rb.getFile()%>"> </a>--%>
+				<a href="file_down.jsp?file_name=<%=rb.getFile()%>" id="filedownA">원본
+				<img id="LoadingImage" src="">
+				</a>
+			</td>
 				
-				<img src="<%=uploadPath%>/<%=rb.getFile()%>"></td>
 				<%
 			}
 			%>
@@ -98,8 +99,7 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                            
-
+           
 <!-- Footer랑 js랑 세트  -->
 <hr>
 <!-- Footer-->
@@ -114,5 +114,21 @@ s.setAttribute('data-timestamp', +new Date());
 <script src="../resources/assets/mail/contact_me.js"></script>
 <!-- Core theme JS-->
 <script src="../resources/js/scripts.js"></script>
+
+<!-- 에이젝스로 file_down갔다오게하기 -->
+<script>
+$('#filedownA').trigger("click");
+$.ajax({ 
+	url: "file_down.jsp?file_name=rb.getFile()",
+	contentType: "image/jpeg",
+	success: function(data) {
+	alert(data)
+	/*$("#LoadingImage").attr("src", "../review/file_down.jsp?file_name=rb.getFile()"); */
+	}
+});    
+
+</script>
+
+
 </body>
 </html>

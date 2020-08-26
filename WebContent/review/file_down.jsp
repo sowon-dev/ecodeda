@@ -1,3 +1,6 @@
+<%@page import="java.io.BufferedOutputStream"%>
+<%@page import="java.io.BufferedInputStream"%>
+<%@page import="java.io.File"%>
 <%@page import="java.net.URLEncoder"%>
 <%@page import="javax.activation.MimeType"%>
 <%@page import="java.io.FileInputStream"%>
@@ -67,10 +70,33 @@ if(ieBrowser){ // IE 일때 : +를 %20(공백)으로 변경
 	filename = new String(filename.getBytes("UTF-8"), "iso-8859-1");
 }
 
+
+
+//이미지로 응답만들기
+response.setHeader("Content-Type","image/jpeg");
+response.setHeader("Content-Transfer-Encoding", "binary;");
+response.setHeader("Pragma", "no-cache;");
+response.setHeader("Expires", "-1;");
+if ( filename!= null ){
+     File file = new File(filename);
+     if (file.exists())
+     {
+      byte b2[] = new byte[(int)file.length()];
+         BufferedInputStream fin = new BufferedInputStream(new FileInputStream(file));
+         BufferedOutputStream outs = new BufferedOutputStream(response.getOutputStream());
+         int read = 0;
+         while ((read = fin.read(b2)) != -1){
+                     outs.write(b2,0,read);
+         }
+         outs.close();
+         fin.close();
+  }
+}
+
 //6. 데이터다운로드 처리
 //브라우저가 응답정보를 읽어서(해석) 처리시 
 //"Content-Disposition" 설정값이  "attachment;" 모든 데이터 다운로드 처리 		
-response.setHeader("Content-Disposition", "attachment; filename="+filename);
+response.setHeader("Content-Disposition", "inline; filename="+filename);
 
 //7. 데이터출력(다운로드)
 ServletOutputStream out2 = response.getOutputStream();

@@ -2,10 +2,6 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%
-request.setCharacterEncoding("UTF-8");
-%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,11 +16,6 @@ request.setCharacterEncoding("UTF-8");
 <!-- 커스텀 board CSS -->
 <link href="../board/board.css" rel="stylesheet"/>
 <%
-//이미지경로 파라미터로 불러오기
-/* String uploadPath = request.getParameter("uploadPath");
-if(uploadPath == null) uploadPath ="D:/PersonalProject/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ecodeda/upload";
-System.out.println("리뷰리스트페이지의 uploadPath: "+uploadPath); */
-
 ReviewDAO rdao = new ReviewDAO();
 int cnt = rdao.getReviewCount();
 
@@ -90,18 +81,9 @@ String email = (String) session.getAttribute("email");
 	<table id="tableReview">
 	<tr>
 		<td>
-			<%-- <a style="color:black;" href="../review/content.jsp?bno=<%=rb.getBno()%>&pageNum=<%=pageNum%>"> --%>
-			<form name="aPost" method="POST" action="../review/content.jsp">				
-			<a style="color:black;" onclick="javascript:document.aPost.submit();">
-				<input type="hidden" name="bno" value="<%=rb.getBno()%>">
-				<input type="hidden" name="pageNum" value="<%=pageNum%>">
-				<%-- <input type="hidden" name="uploadPath" value="<%=uploadPath%>"> --%>
-				<input type="hidden" name="uploadPath" value="">
+			<a style="color:black;" href="../review/content.jsp?bno=<%=rb.getBno()%>&pageNum=<%=pageNum%>">
+			<img src="../resources/assets/img/team/1.jpg">
 			</a>
-			</form>
-		<%-- <img src="<%=uploadPath%>/<%=rb.getFile()%>"> --%>
-			<%-- <img src="/reviewFilepath/<%=rb.getFile()%>"> --%>
-			<img src="/reviewFilepath/<%=rb.getFile()%>">
 			<!-- 참고링크 : https://djusti.tistory.com/2  -->
 		</td>
 	</tr>
@@ -169,11 +151,6 @@ if(cnt != 0){ //cnt는 전체 글 갯수
 	<%
 }
 %>
-
-<!-- a태그 post방식으로 전송  -->
-<script type="text/javascript">
-
-</script>
 
 
 <!-- Footer랑 js랑 세트  -->
