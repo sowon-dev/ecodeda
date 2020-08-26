@@ -21,8 +21,9 @@ request.setCharacterEncoding("UTF-8");
 <link href="../board/board.css" rel="stylesheet"/>
 <%
 //이미지경로 파라미터로 불러오기
-String uploadPath = request.getParameter("uploadPath");
-System.out.println("리뷰리스트페이지의 uploadPath: "+uploadPath);
+/* String uploadPath = request.getParameter("uploadPath");
+if(uploadPath == null) uploadPath ="D:/PersonalProject/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ecodeda/upload";
+System.out.println("리뷰리스트페이지의 uploadPath: "+uploadPath); */
 
 ReviewDAO rdao = new ReviewDAO();
 int cnt = rdao.getReviewCount();
@@ -90,13 +91,18 @@ String email = (String) session.getAttribute("email");
 	<tr>
 		<td>
 			<%-- <a style="color:black;" href="../review/content.jsp?bno=<%=rb.getBno()%>&pageNum=<%=pageNum%>"> --%>
-			<a style="color:black;" onclick="javascript:document.aPost.submit();">
 			<form name="aPost" method="POST" action="../review/content.jsp">				
+			<a style="color:black;" onclick="javascript:document.aPost.submit();">
 				<input type="hidden" name="bno" value="<%=rb.getBno()%>">
 				<input type="hidden" name="pageNum" value="<%=pageNum%>">
-				<input type="hidden" name="uploadPath" value="<%=uploadPath%>">
+				<%-- <input type="hidden" name="uploadPath" value="<%=uploadPath%>"> --%>
+				<input type="hidden" name="uploadPath" value="">
+			</a>
 			</form>
-			<img src="../resources/assets/img/team/1.jpg"></a>
+		<%-- <img src="<%=uploadPath%>/<%=rb.getFile()%>"> --%>
+			<%-- <img src="/reviewFilepath/<%=rb.getFile()%>"> --%>
+			<img src="/reviewFilepath/<%=rb.getFile()%>">
+			<!-- 참고링크 : https://djusti.tistory.com/2  -->
 		</td>
 	</tr>
 	<tr>

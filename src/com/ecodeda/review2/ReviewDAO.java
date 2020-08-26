@@ -66,7 +66,6 @@ public class ReviewDAO {
 			System.out.println("수강후기쓰기 실패");
 			e.printStackTrace();
 		} finally {
-			//자원해제
 			closeDB();
 		}
 	} //insertBoard메서드닫음
@@ -206,12 +205,13 @@ public class ReviewDAO {
 			if(rs.next()){
 				//비번비교 후 일치하면 update 쿼리실행
 				if(rb.getPw().equals(rs.getString("pw"))){
-					sql="update ecod_review set email=?, subject=?, content=? where bno=?";
+					sql="update ecod_review set email=?, subject=?, content=?, file=? where bno=?";
 					pstmt = con.prepareStatement(sql);
 					pstmt.setString(1, rb.getEmail());
 					pstmt.setString(2, rb.getSubject());
 					pstmt.setString(3, rb.getContent());
-					pstmt.setInt(4, rb.getBno());					
+					pstmt.setString(4, rb.getFile());
+					pstmt.setInt(5, rb.getBno());					
 					pstmt.executeUpdate();
 					System.out.println("수강후기수정완료 - 비번일치");
 					//리컨값 변경

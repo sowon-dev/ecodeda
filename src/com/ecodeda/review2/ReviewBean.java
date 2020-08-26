@@ -11,6 +11,7 @@ public class ReviewBean {
 	private String content;
 	private Date date;
 	private String file;
+	
 	public int getBno() {
 		return bno;
 	}
@@ -59,12 +60,11 @@ public class ReviewBean {
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	@Override
 	public String toString() {
 		return "ReviewBean [bno=" + bno + ", email=" + email + ", pw=" + pw + ", name=" + name + ", subject=" + subject
 				+ ", content=" + content + ", date=" + date + ", file=" + file + "]";
 	}
-
-	
 	
 }

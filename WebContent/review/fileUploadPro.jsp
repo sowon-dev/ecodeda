@@ -52,8 +52,6 @@ rb.setSubject(multi.getParameter("subject"));
 rb.setContent(multi.getParameter("content"));
 // bb.setFile(multi.getParameter("file")); //DB에 파일저장 불가->아래코드로 진행
 rb.setFile(multi.getFilesystemName("file"));
-rb.setFilename(multi.getParameter("filename"));
-System.out.println(rb.getFilename());
 ReviewDAO rdao = new ReviewDAO();
 rdao.insertReview(rb);
 //response.sendRedirect("contents.jsp");

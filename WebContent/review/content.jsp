@@ -54,10 +54,12 @@ String emailMasking = rb.getEmail().replaceAll(EMAIL_PATTERN, "$1****");
 			<td colspan="3"><a href="#">이미지파일없음</a></td>
 			<%
 			}else{
+				if(uploadPath == null) uploadPath ="D:/PersonalProject/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ecodeda/upload";
 				%>
 			<td colspan="3" disabled>
 				<%-- <a href="file_down.jsp?file_name=<%=rb.getFile()%>"> </a>--%>
-				<img src="<%=uploadPath%>/<%=rb.file%>"></td>
+				
+				<img src="<%=uploadPath%>/<%=rb.getFile()%>"></td>
 				<%
 			}
 			%>
