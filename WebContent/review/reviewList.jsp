@@ -68,6 +68,11 @@ String email = (String) session.getAttribute("email");
 	<input class="btnn" type="button" value="수강후기작성" onclick="location.href='../review/fwriteForm.jsp'">	
 		<%
 	}
+	 %>
+	</div>
+	<br>
+	<div id="contents">
+	 <%
 	//반복문
 	for(int i=0;i<reviewList.size(); i++){
 		ReviewBean rb = (ReviewBean) reviewList.get(i);
@@ -75,14 +80,12 @@ String email = (String) session.getAttribute("email");
 		final String EMAIL_PATTERN = "([\\w.]{2})(?:[\\w.]*)(@.*)";
 		String emailMasking = rb.getEmail().replaceAll(EMAIL_PATTERN, "$1****");
 	%>
-	</div>
-	<br>
-	<div id="contents">
+
 	<table id="tableReview">
 	<tr>
-		<td>
+		<td class="why">
 			<a style="color:black;" href="../review/content.jsp?bno=<%=rb.getBno()%>&pageNum=<%=pageNum%>">
-			<img src="../upload/<%=rb.getFile()%>">
+			<img class="sameImgSize" src="../upload/<%=rb.getFile()%>">
 			</a>
 			<!-- 참고링크 : https://djusti.tistory.com/2  -->
 		</td>
