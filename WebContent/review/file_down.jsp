@@ -1,4 +1,4 @@
-<%@page import="java.io.BufferedOutputStream"%>
+<%-- <%@page import="java.io.BufferedOutputStream"%>
 <%@page import="java.io.BufferedInputStream"%>
 <%@page import="java.io.File"%>
 <%@page import="java.net.URLEncoder"%>
@@ -6,13 +6,6 @@
 <%@page import="java.io.FileInputStream"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>수강후기 다운로드</title>
-</head>
-<body>
 <% //1. 전달받은 데이터 저장
 String filename = request.getParameter("file_name");
 System.out.println("전달된 파일 명 : "+filename);
@@ -25,9 +18,16 @@ String DownloadPath = context.getRealPath(savepath);
 System.out.println("DownloadPath : "+DownloadPath);
 //3-2. 다운로드할 파일의 전체 경로
 //역슬러시 두개는 이스케이프문자로서 역슬러시 1개만 표현됨
-String FilePath = DownloadPath+"\\"+filename;
+//String FilePath = DownloadPath+"\\"+filename;
 
+//주소가져오기
+String para = request.getServletPath();
 %>
+
+<%=filename %>
+
+
+
 
 <%
 //여기까지다운로드기능완료
@@ -120,5 +120,4 @@ fis.close();
 out.clear();
 out = pageContext.pushBody();
 %>
-</body>
-</html>
+ --%>

@@ -44,11 +44,7 @@ String emailMasking = rb.getEmail().replaceAll(EMAIL_PATTERN, "$1****");
 		</tr>
 		<tr>
 			<th>이미지</th>
-			<%
-			//이미지경로 파라미터로 불러오기
-			String uploadPath = request.getParameter("uploadPath");
-			System.out.println("콘텐츠페이지의uploadPath"+uploadPath);
-			
+			<%			
 			if(rb.getFile() == null){
 			%>
 			<td colspan="3"><a href="#">이미지파일없음</a></td>
@@ -56,8 +52,7 @@ String emailMasking = rb.getEmail().replaceAll(EMAIL_PATTERN, "$1****");
 			}else{
 				%>
 			<td colspan="3" disabled>
-				<a href="file_down.jsp?file_name=<%=rb.getFile()%>" id="filedownA">원본
-				<img id="LoadingImage" src="">
+				<img id="LoadingImage" src="../upload/<%=rb.getFile()%>">
 				</a>
 			</td>
 				
@@ -114,21 +109,6 @@ s.setAttribute('data-timestamp', +new Date());
 <script src="../resources/assets/mail/contact_me.js"></script>
 <!-- Core theme JS-->
 <script src="../resources/js/scripts.js"></script>
-
-<!-- 에이젝스로 file_down갔다오게하기 -->
-<script>
-$('#filedownA').trigger("click");
-$.ajax({ 
-	url: "file_down.jsp?file_name=rb.getFile()",
-	contentType: "image/jpeg",
-	success: function(data) {
-	alert(data)
-	/*$("#LoadingImage").attr("src", "../review/file_down.jsp?file_name=rb.getFile()"); */
-	}
-});    
-
-</script>
-
 
 </body>
 </html>

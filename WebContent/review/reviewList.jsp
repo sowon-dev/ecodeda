@@ -82,7 +82,7 @@ String email = (String) session.getAttribute("email");
 	<tr>
 		<td>
 			<a style="color:black;" href="../review/content.jsp?bno=<%=rb.getBno()%>&pageNum=<%=pageNum%>">
-			<img src="../resources/assets/img/team/1.jpg">
+			<img src="../upload/<%=rb.getFile()%>">
 			</a>
 			<!-- 참고링크 : https://djusti.tistory.com/2  -->
 		</td>
