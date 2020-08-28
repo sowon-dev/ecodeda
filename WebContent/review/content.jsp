@@ -44,22 +44,18 @@ String emailMasking = rb.getEmail().replaceAll(EMAIL_PATTERN, "$1****");
 		</tr>
 		<tr>
 			<th>이미지</th>
-			<%
-			//이미지경로 파라미터로 불러오기
-			String uploadPath = request.getParameter("uploadPath");
-			System.out.println("콘텐츠페이지의uploadPath"+uploadPath);
-			
+			<%			
 			if(rb.getFile() == null){
 			%>
 			<td colspan="3"><a href="#">이미지파일없음</a></td>
 			<%
 			}else{
-				if(uploadPath == null) uploadPath ="D:/PersonalProject/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ecodeda/upload";
 				%>
 			<td colspan="3" disabled>
-				<%-- <a href="file_down.jsp?file_name=<%=rb.getFile()%>"> </a>--%>
+				<img id="LoadingImage" src="../upload/<%=rb.getFile()%>">
+				</a>
+			</td>
 				
-				<img src="<%=uploadPath%>/<%=rb.getFile()%>"></td>
 				<%
 			}
 			%>
@@ -98,8 +94,7 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                            
-
+           
 <!-- Footer랑 js랑 세트  -->
 <hr>
 <!-- Footer-->
@@ -114,5 +109,6 @@ s.setAttribute('data-timestamp', +new Date());
 <script src="../resources/assets/mail/contact_me.js"></script>
 <!-- Core theme JS-->
 <script src="../resources/js/scripts.js"></script>
+
 </body>
 </html>

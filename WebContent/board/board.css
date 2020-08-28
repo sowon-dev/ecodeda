@@ -106,3 +106,18 @@
 	margin-left: 5px;
 	display: inline-block;
 }
+
+/* 수강후기 이미지 동일하게  */
+
+.why {
+	width: 200px;
+	height: 300px;
+	overflow: hidden;
+}
+
+.sameImgSize{
+	width: AUTO;
+	height:100%;
+	overflow: hidden;
+}
+}
