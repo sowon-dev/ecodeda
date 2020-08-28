@@ -1,5 +1,5 @@
 @CHARSET "UTF-8";
-
+/* 네비게이션  */
 @media (min-width: 992px) {
 	#mainNav {
 		background-color: #212529 !important; 
@@ -21,6 +21,7 @@
 	text-align: center;
 }
 
+/* 폼태그 */
 .lableMe {
 	border: 1px solid black;
 	padding: 5px 20px;
@@ -40,6 +41,7 @@
 	margin: 0 auto;
 }
 
+/* 테이블 */
 #tableMe {
   border-collapse: collapse;
   margin : auto;
@@ -108,8 +110,7 @@
 }
 
 /* 수강후기 이미지 동일하게  */
-
-.why {
+.reviewTD {
 	width: 200px;
 	height: 300px;
 	overflow: hidden;
@@ -120,4 +121,9 @@
 	height:100%;
 	overflow: hidden;
 }
+
+.sameImgSize:HOVER {
+	background-color: gray;
+	opacity: 0.5;
+	transition:1s; 
 }

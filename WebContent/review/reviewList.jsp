@@ -1,3 +1,5 @@
+<%@page import="com.ecodeda.member.MemberBean"%>
+<%@page import="com.ecodeda.member.MemberDAO"%>
 <%@page import="com.ecodeda.review2.*"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -83,16 +85,15 @@ String email = (String) session.getAttribute("email");
 
 	<table id="tableReview">
 	<tr>
-		<td class="why">
+		<td class="reviewTD">
 			<a style="color:black;" href="../review/content.jsp?bno=<%=rb.getBno()%>&pageNum=<%=pageNum%>">
 			<img class="sameImgSize" src="../upload/<%=rb.getFile()%>">
 			</a>
-			<!-- 참고링크 : https://djusti.tistory.com/2  -->
 		</td>
 	</tr>
 	<tr>
 		<th>
-			<%=emailMasking%>님의 솔직 후기: 
+			<%=emailMasking%>님의 
 			<a href="../review/content.jsp?bno=<%=rb.getBno()%>&pageNum=<%=pageNum%>"><%=rb.getSubject()%>
 			</a>
 			  | 작성일: <%=rb.getDate()%>
@@ -133,20 +134,20 @@ if(cnt != 0){ //cnt는 전체 글 갯수
 	<%
 	if(startPage > pageBlock){
 		%>
-		<a href="reviewList.jsp?pageNum=<%=startPage-pageBlock%>">   이전   </a>
+		<a href="../review/reviewList.jsp?pageNum=<%=startPage-pageBlock%>">   이전   </a>
 		<%
 	}
 	
 	//숫자
 	for(int i=startPage; i<=endPage; i++){
 		%>
-		<a href ="reviewList.jsp?pageNum=<%=i%>">   <%=i%>   </a>
+		<a href ="../review/reviewList.jsp?pageNum=<%=i%>">   <%=i%>   </a>
 		<%
 	}
 	//다음
 	if(endPage < pageCount){
 		%>
-		<a href ="reviewList.jsp?pageNum=<%=startPage+pageBlock%>">   다음   </a>
+		<a href ="../review/reviewList.jsp?pageNum=<%=startPage+pageBlock%>">   다음   </a>
 		<%
 	}
 	%>

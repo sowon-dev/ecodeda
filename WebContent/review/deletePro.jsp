@@ -1,11 +1,11 @@
-<%@page import="com.ecodeda.board.BoardDAO"%>
+<%@page import="com.ecodeda.review2.ReviewDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>글 삭제</title>
+<title>수강후기 삭제</title>
 </head>
 <body>
 <%
@@ -16,15 +16,14 @@ int bno = Integer.parseInt(request.getParameter("bno"));
 String pageNum = request.getParameter("pageNum");
 String pw = request.getParameter("pw");
 //3. DAO생성
-BoardDAO bdao = new BoardDAO();
-//4. 정보수정메서드 updateBoard(bb) 
-// -> 결과를 정수형 데이터로 리턴 (1=>정상처리, 0=>비번오류, -1=>해당글없음)
-int result = bdao.deleteBoard(bno, pw);
+ReviewDAO rdao = new ReviewDAO();
+//4. 정보수정메서드 updateBoard(bb) -> 결과를 정수형 데이터로 리턴 (1=>정상처리, 0=>비번오류, -1=>해당글없음)
+int result = rdao.deleteReview(bno, pw);
 if(result == 1){
 	%>
 	<script type="text/javascript">
 		alert("정상적으로 글 삭제되었습니다");
-		location.href="boardList.jsp";
+		location.href="../review/reviewList.jsp";
 	</script>
 	<% 
 }else if(result == 0){

@@ -51,8 +51,8 @@ String emailMasking = rb.getEmail().replaceAll(EMAIL_PATTERN, "$1****");
 			<%
 			}else{
 				%>
-			<td colspan="3" disabled>
-				<img id="LoadingImage" src="../upload/<%=rb.getFile()%>">
+			<td colspan="3" class="reviewTD" disabled>
+				<img id="LoadingImage" class="sameImgSize" src="../upload/<%=rb.getFile()%>">
 				</a>
 			</td>
 				
