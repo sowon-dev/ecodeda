@@ -35,11 +35,13 @@ if( email == null){
 %>
 <fieldset id="fieldsetMe">
 <legend id="legendMe">수강후기 수정하기</legend>
-	<form action="updatePro.jsp?pageNum=<%=pageNum %>" method="post" name="fr" id="formMe">
+	<form action="updatePro.jsp?pageNum=<%=pageNum %>" method="post" name="fr" id="formMe" enctype="multipart/form-data">
 		<div id="centerMe">
 			<input type="hidden" name="bno" value="<%=rb.getBno() %>">
-			<input type="text" class="lableMe" value="작성자" readonly/>
+			<input type="text" class="lableMe" value="이메일" readonly/>
 			<input type="text" name="email" class="inputMe" value="<%=rb.getEmail() %>" readonly><br>
+			<input type="text" class="lableMe" value="작성자" readonly/>
+			<input type="text" name="name" class="inputMe" value="<%=rb.getName() %>" readonly><br>
 			<input type="text" class="lableMe" value="비밀번호 " readonly/>
 			<input type="password" name="pw" class="inputMe" placeholder="비밀번호를 입력해주세요" required><br>
 			<input type="text" class="lableMe" value="제목" readonly/>

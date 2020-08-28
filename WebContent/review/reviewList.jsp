@@ -93,7 +93,7 @@ String email = (String) session.getAttribute("email");
 	</tr>
 	<tr>
 		<th>
-			<%=emailMasking%>님의 
+			<%=rb.getName()%>님의 
 			<a href="../review/content.jsp?bno=<%=rb.getBno()%>&pageNum=<%=pageNum%>"><%=rb.getSubject()%>
 			</a>
 			  | 작성일: <%=rb.getDate()%>
