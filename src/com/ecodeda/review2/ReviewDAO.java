@@ -11,6 +11,7 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 import com.ecodeda.board.BoardBean;
+import com.ecodeda.member.MemberBean;
 
 public class ReviewDAO {
 	Connection con = null;
@@ -132,8 +133,13 @@ public class ReviewDAO {
 	
 		try {
 			getCon();
-			sql = "select * from ecod_review order by bno desc "
-					+"limit ?,?";
+			sql = "select r.bno, r.email, r.pw, m.name, r.subject, r.content, r.date, r.file "
+					+ "from ecod_review r "
+					+ "inner join ecod_member m "
+					+ "on m.email = r.email "
+					+ "order by bno desc "
+					+ "limit ?,?";
+			
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, startRow-1);
 			pstmt.setInt(2, pageSize);

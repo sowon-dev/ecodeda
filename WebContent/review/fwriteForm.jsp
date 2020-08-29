@@ -1,7 +1,5 @@
-<%@page import="com.ecodeda.member.MemberBean"%>
-<%@page import="com.ecodeda.member.MemberDAO"%>
-<%@page import="com.ecodeda.review2.ReviewBean"%>
-<%@page import="com.ecodeda.review2.ReviewDAO"%>
+<%@page import="com.ecodeda.member.*"%>
+<%@page import="com.ecodeda.review2.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
