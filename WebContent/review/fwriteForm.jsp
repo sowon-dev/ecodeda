@@ -1,3 +1,5 @@
+<%@page import="com.ecodeda.member.*"%>
+<%@page import="com.ecodeda.review2.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -26,13 +28,18 @@ if( email == null){
 	</script>
 	<%
 }
+
+MemberDAO mdao = new MemberDAO();
+MemberBean mb = mdao.getMember(email);
 %>
 <fieldset id="fieldsetMe">
 <legend id="legendMe">수강후기 작성</legend>
 	<form action="fileUploadPro.jsp" method="post" name="fr" id="formMe" enctype="multipart/form-data">
 		<div id="centerMe">
-			<input type="text" class="lableMe" value="작성자" readonly/>
+			<input type="text" class="lableMe" value="이메일" readonly/>
 			<input type="text" name="email" class="inputMe" value="<%=email %>" readonly><br>
+			<input type="text" class="lableMe" value="작성자" readonly/>
+			<input type="text" name="name" class="inputMe" value="<%=mb.getName() %>" readonly><br>
 			<input type="text" class="lableMe" value="비밀번호 " readonly/>
 			<input type="password" name="pw" class="inputMe" required><br>
 			<input type="text" class="lableMe" value="제목" readonly/>
@@ -67,6 +74,15 @@ if( email == null){
 	    f.action="fileUploadPro.jsp"
 	    f.submit();
 	}
+</script>
+
+<!-- 텍스트에리어 enter 입력 -->
+<script>
+$('textarea').keydown(function(event) {
+  if (event.keyCode === 13) {
+    event.stopPropagation();
+  }
+});
 </script>
 
 <!-- Footer랑 js랑 세트  -->

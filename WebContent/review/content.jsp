@@ -62,7 +62,7 @@ String emailMasking = rb.getEmail().replaceAll(EMAIL_PATTERN, "$1****");
 		</tr>
 		<tr>
 			<th>내용</th>
-			<td colspan="3" height="300px" width="700px"><%=rb.getContent()%></td>
+			<td colspan="3" height="300px" width="700px" style="white-space:pre;"><%=rb.getContent()%></td>
 		</tr>
 		<tr>
 			<td colspan="4" style="text-align:center">
@@ -94,7 +94,7 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-           
+
 <!-- Footer랑 js랑 세트  -->
 <hr>
 <!-- Footer-->

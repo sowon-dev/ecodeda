@@ -11,6 +11,7 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 import com.ecodeda.board.BoardBean;
+import com.ecodeda.member.MemberBean;
 
 public class ReviewDAO {
 	Connection con = null;
@@ -132,8 +133,13 @@ public class ReviewDAO {
 	
 		try {
 			getCon();
-			sql = "select * from ecod_review order by bno desc "
-					+"limit ?,?";
+			sql = "select r.bno, r.email, r.pw, m.name, r.subject, r.content, r.date, r.file "
+					+ "from ecod_review r "
+					+ "inner join ecod_member m "
+					+ "on m.email = r.email "
+					+ "order by bno desc "
+					+ "limit ?,?";
+			
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, startRow-1);
 			pstmt.setInt(2, pageSize);
@@ -205,23 +211,22 @@ public class ReviewDAO {
 			if(rs.next()){
 				//비번비교 후 일치하면 update 쿼리실행
 				if(rb.getPw().equals(rs.getString("pw"))){
-					sql="update ecod_review set email=?, subject=?, content=?, file=? where bno=?";
+					sql="update ecod_review set subject=?, content=?, file=? where bno=?";
 					pstmt = con.prepareStatement(sql);
-					pstmt.setString(1, rb.getEmail());
-					pstmt.setString(2, rb.getSubject());
-					pstmt.setString(3, rb.getContent());
-					pstmt.setString(4, rb.getFile());
-					pstmt.setInt(5, rb.getBno());					
+					pstmt.setString(1, rb.getSubject());
+					pstmt.setString(2, rb.getContent());
+					pstmt.setString(3, rb.getFile());
+					pstmt.setInt(4, rb.getBno());					
 					pstmt.executeUpdate();
-					System.out.println("수강후기수정완료 - 비번일치");
+					System.out.println("수강후기수정완료 - 비번일치"+rs);
 					//리컨값 변경
 					result =1;
 				}else{//비번불일치
-					System.out.println("수강후기수정실패 - 비번불일치");
+					System.out.println("수강후기수정실패 - 비번불일치"+rs);
 					result = 0;
 				}
 			}else{
-				System.out.println("수강후기수정실패 - 해당글없음");
+				System.out.println("수강후기수정실패 - 해당글없음"+", bno:"+rb.getBno());
 				result = -1;
 			}
 		} catch (Exception e) {

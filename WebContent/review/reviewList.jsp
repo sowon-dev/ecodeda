@@ -1,5 +1,4 @@
-<%@page import="com.ecodeda.member.MemberBean"%>
-<%@page import="com.ecodeda.member.MemberDAO"%>
+<%@page import="com.ecodeda.member.*"%>
 <%@page import="com.ecodeda.review2.*"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -42,7 +41,6 @@ int endRow= currentPage * pageSize;
 //currentPage가 2인경우, 2*10 = 20
 //currentPage가 3인경우, 3*10 = 30
 
-//System.out.println(bdao.getBoardList());
 ArrayList reviewList = null;
 if(cnt != 0){
 	//일반
@@ -74,8 +72,8 @@ String email = (String) session.getAttribute("email");
 	</div>
 	<br>
 	<div id="contents">
-	 <%
-	//반복문
+	 <%	 
+	 //반복문
 	for(int i=0;i<reviewList.size(); i++){
 		ReviewBean rb = (ReviewBean) reviewList.get(i);
 		
@@ -93,10 +91,9 @@ String email = (String) session.getAttribute("email");
 	</tr>
 	<tr>
 		<th>
-			<%=emailMasking%>님의 
+			<%=rb.getName()%>님의 수강후기 : 
 			<a href="../review/content.jsp?bno=<%=rb.getBno()%>&pageNum=<%=pageNum%>"><%=rb.getSubject()%>
 			</a>
-			  | 작성일: <%=rb.getDate()%>
 		</th>
 	</tr>
 	<%
