@@ -40,7 +40,7 @@
                 <ul class="timeline">
                     <li>
                         <div class="timeline-image"><a href="../lecture/lectureFrame.jsp?url=tZooW6PritE?list=PLuHgQVnccGMDZP7FJ_ZsUrdCGH68ppvPb">
-                        	<img class="rounded-circle img-fluid" src="../resources/assets/img/about/1resize.png" alt="클릭하면 무료강의로 이동합니다"/></a>
+                        	<img class="rounded-circle img-fluid img-hover" src="../resources/assets/img/about/1resize.png" title="클릭하면 무료강의로 이동합니다"/></a>
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -52,7 +52,7 @@
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image"><a href="../lecture/lectureFrame.jsp?url=dPRtcRwKo-Y?list=PLuHgQVnccGMBB348PWRN0fREzYcYgFybf">
-                        	<img class="rounded-circle img-fluid" src="../resources/assets/img/about/2resize.png" alt="클릭하면 무료강의로 이동합니다" /></a>
+                        	<img class="rounded-circle img-fluid img-hover" src="../resources/assets/img/about/2resize.png" title="클릭하면 무료강의로 이동합니다" /></a>
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -64,7 +64,7 @@
                     </li>
                     <li>
                         <div class="timeline-image"><a href="../lecture/lectureFrame.jsp?url=V3QsSrldHqI?list=PLcqDmjxt30RtqbStQqk-eYMK8N-1SYIFn">
-                        	<img class="rounded-circle img-fluid" src="../resources/assets/img/about/react.jpg" alt="클릭하면 무료강의로 이동합니다" /></a>
+                        	<img class="rounded-circle img-fluid img-hover" src="../resources/assets/img/about/react.jpg" title="클릭하면 무료강의로 이동합니다" /></a>
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -76,7 +76,7 @@
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image"><a href="../lecture/lectureFrame.jsp?url=hke9FKluXow?list=PLRx0vPvlEmdAdWCQeUPnyMZ4PsW3dGuFB">
-                        	<img class="rounded-circle img-fluid" src="../resources/assets/img/about/jsp.png" alt="클릭하면 무료강의로 이동합니다" /></a></div>
+                        	<img class="rounded-circle img-fluid img-hover" src="../resources/assets/img/about/jsp.png" title="클릭하면 무료강의로 이동합니다" /></a></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>강의평가 웹사이트 만들기</h4>
@@ -87,7 +87,7 @@
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image"><a href="../lecture/lectureFrame.jsp?url=hFJZwOfme6w?list=PLuHgQVnccGMA8iwZwrGyNXCGy2LAAsTXk">
-                        	<img class="rounded-circle img-fluid" src="../resources/assets/img/about/git.png" alt="" /></a></div>
+                        	<img class="rounded-circle img-fluid img-hover" src="../resources/assets/img/about/git.png" title="클릭하면 무료강의로 이동합니다" /></a></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>협업을 위한 버전관리</h4>

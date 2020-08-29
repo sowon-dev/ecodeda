@@ -123,7 +123,15 @@
 }
 
 .sameImgSize:HOVER {
-	background-color: gray;
 	opacity: 0.5;
 	transition:1s; 
+}
+
+/* 강의로드맵 hover적용 */
+.img-hover{
+	opacity: 1;
+}
+.img-hover:HOVER {
+	transition: opacity ease-in-out 0.25s;
+	opacity: 0.5;
 }
