@@ -93,10 +93,9 @@ String email = (String) session.getAttribute("email");
 	</tr>
 	<tr>
 		<th>
-			<%=rb.getName()%>님의 
+			<%=rb.getName()%>님의 수강후기 : 
 			<a href="../review/content.jsp?bno=<%=rb.getBno()%>&pageNum=<%=pageNum%>"><%=rb.getSubject()%>
 			</a>
-			  | 작성일: <%=rb.getDate()%>
 		</th>
 	</tr>
 	<%

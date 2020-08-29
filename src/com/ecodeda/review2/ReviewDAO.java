@@ -205,23 +205,22 @@ public class ReviewDAO {
 			if(rs.next()){
 				//비번비교 후 일치하면 update 쿼리실행
 				if(rb.getPw().equals(rs.getString("pw"))){
-					sql="update ecod_review set email=?, subject=?, content=?, file=? where bno=?";
+					sql="update ecod_review set subject=?, content=?, file=? where bno=?";
 					pstmt = con.prepareStatement(sql);
-					pstmt.setString(1, rb.getEmail());
-					pstmt.setString(2, rb.getSubject());
-					pstmt.setString(3, rb.getContent());
-					pstmt.setString(4, rb.getFile());
-					pstmt.setInt(5, rb.getBno());					
+					pstmt.setString(1, rb.getSubject());
+					pstmt.setString(2, rb.getContent());
+					pstmt.setString(3, rb.getFile());
+					pstmt.setInt(4, rb.getBno());					
 					pstmt.executeUpdate();
-					System.out.println("수강후기수정완료 - 비번일치");
+					System.out.println("수강후기수정완료 - 비번일치"+rs);
 					//리컨값 변경
 					result =1;
 				}else{//비번불일치
-					System.out.println("수강후기수정실패 - 비번불일치");
+					System.out.println("수강후기수정실패 - 비번불일치"+rs);
 					result = 0;
 				}
 			}else{
-				System.out.println("수강후기수정실패 - 해당글없음");
+				System.out.println("수강후기수정실패 - 해당글없음"+", bno:"+rb.getBno());
 				result = -1;
 			}
 		} catch (Exception e) {

@@ -15,6 +15,7 @@
 request.setCharacterEncoding("UTF-8");
 //2. 파라미터저장(액션태그사용 & pageNum은 파라미터로) 
 String pageNum = request.getParameter("pageNum");
+int bno = Integer.parseInt(request.getParameter("bno"));
 %>
 <jsp:useBean id="rb" class="com.ecodeda.review2.ReviewBean"></jsp:useBean>
 <jsp:setProperty property="*" name="rb"/>
@@ -50,7 +51,9 @@ rb.setPw(multi.getParameter("pw"));
 rb.setName(multi.getParameter("name"));
 rb.setSubject(multi.getParameter("subject"));
 rb.setContent(multi.getParameter("content"));
-// bb.setFile(multi.getParameter("file")); //DB에 파일저장 불가->아래코드로 진행
+rb.setFile(multi.getFilesystemName("file"));
+/* 파일명 db에 넣기 */
+System.out.println("파일명 db에 넣기:" + rb.getFile());
 %>
 <% //3. DAO생성
 ReviewDAO rdao = new ReviewDAO();

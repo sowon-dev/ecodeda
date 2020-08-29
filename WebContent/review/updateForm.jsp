@@ -1,5 +1,4 @@
-<%@page import="com.ecodeda.review2.ReviewBean"%>
-<%@page import="com.ecodeda.review2.ReviewDAO"%>
+<%@page import="com.ecodeda.review2.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -8,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- favicon  모든페이지에 필요 -->
 <link rel="icon" type="image/x-icon" href="../resources/assets/img/favicon.ico" />
-<!-- 커스텀 board CSS -->
+<!-- 커스텀 board CSS 모든페이지에 필요 -->
 <link href="../board/board.css" rel="stylesheet" />
 <title>수강후기 수정</title>
 </head>
@@ -35,7 +34,7 @@ if( email == null){
 %>
 <fieldset id="fieldsetMe">
 <legend id="legendMe">수강후기 수정하기</legend>
-	<form action="updatePro.jsp?pageNum=<%=pageNum %>" method="post" name="fr" id="formMe" enctype="multipart/form-data">
+	<form action="updatePro.jsp?bno=<%=rb.getBno()%>&pageNum=<%=pageNum %>" method="post" name="fr" id="formMe" enctype="multipart/form-data">
 		<div id="centerMe">
 			<input type="hidden" name="bno" value="<%=rb.getBno() %>">
 			<input type="text" class="lableMe" value="이메일" readonly/>
