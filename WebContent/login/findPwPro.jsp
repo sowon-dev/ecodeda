@@ -1,3 +1,4 @@
+<%@page import="com.ecodeda.member.MakeRandomNum"%>
 <%@page import="java.util.Random"%>
 <%@page import="com.ecodeda.member.FindPw"%>
 <%@page import="com.ecodeda.member.MemberDAO"%>
@@ -22,9 +23,10 @@ int result = mdao.findPw(email, name, phone);
 if(result == 1){
 	/* 임시이메일 보내기 객체생성 */
 	FindPw fp = new FindPw();
-	Random myRandom = new Random();
-	int rNum = myRandom.nextInt(100)*3;
-	fp.send("(주)이코드다에서 고객님의 요청으로 발행된 임시 비밀번호입니다. 본인이 아닌 경우 (주)이코드다로 유선연락주세요<p>임시 비밀번호: "+rNum, email);
+	MakeRandomNum r = new MakeRandomNum();
+	String rNum = r.excuteGenerate();
+	fp.send("(주)이코드다에서 고객님의 요청으로 발행된 임시 비밀번호입니다. 본인이 아닌 경우 (주)이코드다로 유선연락주세요.임시 비밀번호: "+rNum, email);
+	mdao.updatePw(email, rNum);
 	%>
 	<script type="text/javascript">
 		alert("임시비밀번호가 발급되었습니다. 이메일을 통해 확인하세요");
