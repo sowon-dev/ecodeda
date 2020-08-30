@@ -9,6 +9,8 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
 <!-- Core theme CSS (includes Bootstrap) Bootstrap core CSS -->
 <link href="../resources/css/styles.css" rel="stylesheet" />
+<!-- 커스텀 board CSS -->
+<link href="../board/board.css" rel="stylesheet"/>
 
 <!-- Modal 1-->
 <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
@@ -25,9 +27,11 @@
                             <img class="img-fluid d-block mx-auto" src="../resources/assets/img/portfolio/01-full.jpg" alt="" />
                             <p> 입문자가 제일 좋아하는 강의! 만족도 100%! 실습구성으로 지루할 틈없는 알찬 강의!</p>
                             <ul class="list-inline">
-                                <li>여기에 썸네일로 이미지태그를 넣을까?</li>
-                                <li>갤러리게시판처럼?</li>
-                                <li>링크도 같이 걸어서 바로 갈수있도록</li>
+                                <li>
+                                	<input class="btnn" type="button" onclick="location.href='../lecture/lectureFrame.jsp?url=OoA70D2TE0A'" title="클릭하시면 강의보기로 이동됩니다." value="기초부터 따라하는 프론트앤드"/>
+                                	<input class="btnn" type="button" onclick="location.href='../lecture/lectureFrame.jsp?url=OoA70D2TE0A'" title="클릭하시면 강의보기로 이동됩니다." value="실무 웹 제작 강의노트"/>
+                                	<input class="btnn" type="button" onclick="location.href='../lecture/lectureFrame.jsp?url=OoA70D2TE0A'" title="클릭하시면 강의보기로 이동됩니다." value="중급 프론트앤드"/>
+                                </li>
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fas fa-times mr-1"></i> 닫기
@@ -54,9 +58,11 @@
                             <img class="img-fluid d-block mx-auto" src="../resources/assets/img/portfolio/02-full.jpg" alt="" />
                             <p>기초부터 탄탄하면 그 어떤 언어도 두렵지 않다! 기초부터 탄탄히 키워주는 옹골찬 강의!</p>
                             <ul class="list-inline">
-                                <li>Date: January 2020</li>
-                                <li>Client: Explore</li>
-                                <li>Category: Graphic Design</li>
+                                <li>
+                                	<input class="btnn" type="button" onclick="location.href='../lecture/lectureFrame.jsp?url=OoA70D2TE0A'" title="클릭하시면 강의보기로 이동됩니다." value="기초부터 따라하는 백앤드"/>
+                                	<input class="btnn" type="button" onclick="location.href='../lecture/lectureFrame.jsp?url=OoA70D2TE0A'" title="클릭하시면 강의보기로 이동됩니다." value="서버마스터"/>
+                                	<input class="btnn" type="button" onclick="location.href='../lecture/lectureFrame.jsp?url=OoA70D2TE0A'" title="클릭하시면 강의보기로 이동됩니다." value="중급 백앤드"/>
+                                </li>
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fas fa-times mr-1"></i>닫기
@@ -78,14 +84,16 @@
                     <div class="col-lg-8">
                         <div class="modal-body">
                             <!-- Project Details Go Here-->
-                            <h2 class="text-uppercase">Project Name</h2>
+                            <h2 class="text-uppercase">데이터베이스</h2>
                             <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                             <img class="img-fluid d-block mx-auto" src="../resources/assets/img/portfolio/03-full.jpg" alt="" />
                             <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                             <ul class="list-inline">
-                                <li>Date: January 2020</li>
-                                <li>Client: Finish</li>
-                                <li>Category: Identity</li>
+                                <li>
+                                	<input class="btnn" type="button" onclick="location.href='../lecture/lectureFrame.jsp?url=OoA70D2TE0A'" title="클릭하시면 강의보기로 이동됩니다." value="기초부터 따라하는 데이터베이스"/>
+                                	<input class="btnn" type="button" onclick="location.href='../lecture/lectureFrame.jsp?url=OoA70D2TE0A'" title="클릭하시면 강의보기로 이동됩니다." value="실무 데이터베이스"/>
+                                	<input class="btnn" type="button" onclick="location.href='../lecture/lectureFrame.jsp?url=OoA70D2TE0A'" title="클릭하시면 강의보기로 이동됩니다." value="중급 DBA"/>
+                                </li>
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fas fa-times mr-1"></i>닫기
@@ -107,14 +115,16 @@
                     <div class="col-lg-8">
                         <div class="modal-body">
                             <!-- Project Details Go Here-->
-                            <h2 class="text-uppercase">Project Name</h2>
+                            <h2 class="text-uppercase">웹 프로그래밍</h2>
                             <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                             <img class="img-fluid d-block mx-auto" src="../resources/assets/img/portfolio/04-full.jpg" alt="" />
                             <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                             <ul class="list-inline">
-                                <li>Date: January 2020</li>
-                                <li>Client: Lines</li>
-                                <li>Category: Branding</li>
+                                <li>
+                                	<input class="btnn" type="button" onclick="location.href='../lecture/lectureFrame.jsp?url=OoA70D2TE0A'" title="클릭하시면 강의보기로 이동됩니다." value="기초부터 따라하는 웹프로그래밍"/>
+                                	<input class="btnn" type="button" onclick="location.href='../lecture/lectureFrame.jsp?url=OoA70D2TE0A'" title="클릭하시면 강의보기로 이동됩니다." value="실무 웹프로그래밍"/>
+                                	<input class="btnn" type="button" onclick="location.href='../lecture/lectureFrame.jsp?url=OoA70D2TE0A'" title="클릭하시면 강의보기로 이동됩니다." value="중급 웹프로그래밍"/>
+                                </li>
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fas fa-times mr-1"></i>닫기
@@ -136,14 +146,16 @@
                     <div class="col-lg-8">
                         <div class="modal-body">
                             <!-- Project Details Go Here-->
-                            <h2 class="text-uppercase">Project Name</h2>
+                            <h2 class="text-uppercase">모바일 프로그래밍</h2>
                             <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                             <img class="img-fluid d-block mx-auto" src="../resources/assets/img/portfolio/05-full.jpg" alt="" />
                             <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                             <ul class="list-inline">
-                                <li>Date: January 2020</li>
-                                <li>Client: Southwest</li>
-                                <li>Category: Website Design</li>
+                                <li>
+                                	<input class="btnn" type="button" onclick="location.href='../lecture/lectureFrame.jsp?url=OoA70D2TE0A'" title="클릭하시면 강의보기로 이동됩니다." value="기초부터 따라하는 모바일프로그래밍"/>
+                                	<input class="btnn" type="button" onclick="location.href='../lecture/lectureFrame.jsp?url=OoA70D2TE0A'" title="클릭하시면 강의보기로 이동됩니다." value="실무 웹 제작 강의노트"/>
+                                	<input class="btnn" type="button" onclick="location.href='../lecture/lectureFrame.jsp?url=OoA70D2TE0A'" title="클릭하시면 강의보기로 이동됩니다." value="중급 모바일프로그래밍"/>
+                                </li>
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fas fa-times mr-1"></i>닫기
@@ -165,14 +177,16 @@
                     <div class="col-lg-8">
                         <div class="modal-body">
                             <!-- Project Details Go Here-->
-                            <h2 class="text-uppercase">Project Name</h2>
+                            <h2 class="text-uppercase">알고리즘</h2>
                             <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                             <img class="img-fluid d-block mx-auto" src="../resources/assets/img/portfolio/06-full.jpg" alt="" />
                             <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                             <ul class="list-inline">
-                                <li>Date: January 2020</li>
-                                <li>Client: Window</li>
-                                <li>Category: Photography</li>
+                                <li>
+                                	<input class="btnn" type="button" onclick="location.href='../lecture/lectureFrame.jsp?url=OoA70D2TE0A'" title="클릭하시면 강의보기로 이동됩니다." value="기초부터 따라하는 알고라즘"/>
+                                	<input class="btnn" type="button" onclick="location.href='../lecture/lectureFrame.jsp?url=OoA70D2TE0A'" title="클릭하시면 강의보기로 이동됩니다." value="실무 알고리즘"/>
+                                	<input class="btnn" type="button" onclick="location.href='../lecture/lectureFrame.jsp?url=OoA70D2TE0A'" title="클릭하시면 강의보기로 이동됩니다." value="중급 알고르즘"/>
+                                </li>
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fas fa-times mr-1"></i>닫기
