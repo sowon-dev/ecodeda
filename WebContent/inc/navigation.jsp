@@ -30,7 +30,7 @@ String email = (String) session.getAttribute("email");
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../main/main.jsp#team">수강후기</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../board/boardList.jsp">커뮤니티</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../main/main.jsp#services">회사소개</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../main/main.jsp##contact">고객센터</a></li>
+               <!--  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../main/main.jsp##contact">고객센터</a></li> -->
                 <%
                 if(email != null){
                 %>

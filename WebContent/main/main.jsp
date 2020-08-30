@@ -106,11 +106,6 @@
             </div>
         </section>
         
-        <!-- Team 수강후기-->
-        <section class="page-section bg-light" id="team">
-			<jsp:include page="../review/reviewList.jsp"></jsp:include>
-        </section>
-
         <!-- Services 회사소개-->
         <section class="page-section" id="services">
             <div class="container">
@@ -147,8 +142,13 @@
             </div>
         </section>
         
+        <!-- Team 수강후기-->
+        <section class="page-section bg-light" id="team">
+			<jsp:include page="../review/reviewList.jsp"></jsp:include>
+        </section>
+        
         <!-- Contact 고객센터-->
-        <section class="page-section" id="contact">
+<!--         <section class="page-section" id="contact">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Contact Us</h2>
@@ -183,14 +183,14 @@
                     </div>
                 </form>
             </div>
-        </section>
+        </section> -->
         
         <!-- Portfolio Modals 갤러리게시판-->
         <jsp:include page="../lecture/lectureModals.jsp"></jsp:include>
         
         <!-- Footer랑 js랑 세트  -->
         <!-- Footer-->
-        <jsp:include page="../inc/footer.jsp"></jsp:include>
+<%--         <jsp:include page="../inc/footer.jsp"></jsp:include> --%>
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
