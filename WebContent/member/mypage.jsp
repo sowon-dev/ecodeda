@@ -42,7 +42,7 @@ if(mb != null){
 	                    </div>
 	                    <div class="form-group">
 	                        <input class="form-control-mypage" type="text" value="비밀번호" style="width: 114px;" readonly />
-	                        <input class="form-control-mypage2" id="pw" name="pw" type="password" placeholder="비밀번호수정버튼을 눌러주세요" value="" style="width: 344px;" readonly/>
+	                        <input class="form-control-mypage2" id="pw" name="pw" type="password" placeholder="비밀번호수정버튼을 이용하세요" value="" style="width: 344px;" readonly/>
 	                    </div>
 	                    <div class="form-group">
 	                        <input class="form-control-mypage" type="text" value="이름" style="width: 114px;" readonly />
@@ -64,7 +64,7 @@ if(mb != null){
 	            </div>
 			<div id="success"></div>
 			<input type="button" class="btn btn-primary btn-xl text-uppercase" value="홈으로 가기" class="button" onclick="location.href='../main/main.jsp'" style="padding:1rem 1.2rem">
-			<input type="button" class="btn btn-primary btn-xl text-uppercase" value="비밀번호수정" class="button" onclick="location.href='pwUpdate.jsp'" style="padding:1rem 1.2rem">
+			<input type="button" class="btn btn-primary btn-xl text-uppercase" value="비밀번호수정" class="button" onclick="location.href='pwUpdateForm.jsp'" style="padding:1rem 1.2rem">
 			<input type="button" class="btn btn-primary btn-xl text-uppercase" value="회원정보수정" class="button" onclick="location.href='updateForm.jsp'" style="padding:1rem 1.2rem">
 			<input type="button" class="btn btn-primary btn-xl text-uppercase" value="회원탈퇴" class="button" onclick="location.href='deleteForm.jsp'" style="padding:1rem 1.2rem">
 			<!-- 관리자일때만 메뉴확인가능 -->

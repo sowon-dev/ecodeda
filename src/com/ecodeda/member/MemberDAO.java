@@ -248,8 +248,7 @@ public class MemberDAO {
 		return result;
 	}//end of findPw
 	
-	//비번변경
-	//회원정보 수정 메서드
+	//임시비밀번호로 변경 
 	public void updatePw(String email, String rNum){
 		try {
 			con = getCon();
@@ -276,5 +275,25 @@ public class MemberDAO {
 			closeDB();
 		}
 	}//updatePw닫힘
+	
+	//비밀번호 변경
+	public void updatePwbyUser(String email, String pw){
+		try {
+			con = getCon();
+			//비번일치시 정보수정 작업
+			sql = "update ecod_member set pw=? where email=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, pw);
+			pstmt.setString(2, email);
+			pstmt.executeUpdate();
+			System.out.println("비밀번호변경 updatePwbyUser 성공");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally{
+			closeDB();
+		}
+	}//updatePwbyUser닫힘
 	
 }//MemberDAO닫음

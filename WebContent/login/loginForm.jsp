@@ -69,9 +69,9 @@
 
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
-<!-- 유효성체크 : 데이터 빈공백체크(id와 성별) -->
 <script type="text/javascript">
 
+<!-- 유효성체크 : 데이터 빈공백체크(id와 성별) -->
 if(document.fr.email.value =="" || document.fr.email.value.length < 0){
 	document.getElementById("submitBtn").disabled = true;
 	document.getElementById("submitBtn").style.background = 'rgb(255, 255, 255, .1)';
