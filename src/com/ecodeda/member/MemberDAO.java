@@ -243,5 +243,6 @@ public class MemberDAO {
 		return result;		
 	}//delete닫힘
 	
+	//임시비밀번호발급
 	
 }//MemberDAO닫음

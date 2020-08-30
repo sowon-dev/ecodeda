@@ -59,12 +59,11 @@ public class findPW {
 		}
 	}
 	
-	
 		public static void main(String[] args) {
 			Random myRandom = new Random();
 			int rNum = myRandom.nextInt(100)*3;
 			
-			send("이코드다 임시비밀번호 발급안내", "임시 비밀번호 입니다."+rNum, "ecodeda@gmail.com");
+			send("(주)이코드다 임시비밀번호 발급안내", "임시 비밀번호 입니다."+rNum, "ecodeda@gmail.com");
 			System.out.println("임시비밀번호발급완료")
 			;
 		}
