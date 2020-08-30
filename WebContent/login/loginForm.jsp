@@ -37,11 +37,11 @@
 	                            <div class="group"> <input type="submit" class="button" value="로그인" style="font-weight: bold;color:white;"> </div>
 	                        </form>
                             <div class="hr"></div>
-                            <div class="foot"> <a href="#">비밀번호 찾기</a> | <a href="../index.jsp">홈페이지로 돌아가기</a></div>
+                            <div class="foot"> <a href="findPwForm.jsp">비밀번호 찾기</a> | <a href="../index.jsp">홈페이지로 돌아가기</a></div>
                         </div>
                         <form action="joinPro.jsp" method="post" class="sign-up-form" id="join" name="fr">
                             <div class="group"> <label for="email" class="label">이메일
-                            	<input type="button" class="button" onclick="winopen();" value="중복 확인" style="font-size:12px;width:80px;display:inline;padding:5px 0;margin-bottom:3px;color:white;"><br> </label>
+                            	<input type="button" class="button" onclick="winopen();" value="중복 확인" style="font-size:12px;width:80px;display:inline;padding:5px 0;margin-bottom:3px;color:white;scrollbars:no;"><br> </label>
                             	<input id="email" name="email" type="email" class="input" onkeyup="emailCheckFunc()" placeholder="이메일 주소를 입력해주세요(아이디로 사용됩니다)." minlength=5 required> 
                             	<div id="emaillcheckMsg" style="font-size:12px; display:none; margin-bottom:-5px; margin-bottom:5px; font-weight:bold; text-align:center;"></div>
                             </div>
@@ -93,26 +93,6 @@ function winopen(){
 		window.open("joinIdCheck.jsp?userid="+document.fr.email.value,"","width=360px, height=387px, resizable = no, scrollbars = no");
 	}
 }
-
-//이메일중복체크 서블릿사용-실패
-function emailCheckFunc(){
-	$.ajax({
-		type : 'POST',
-		url : './UserRegisterCheckServlet',
-		data : {email: $('#email').val()},
-		success : function(result) {
-			console.log("이메일중복체크(1 = 중복o / 0 = 중복x) : "+ result);	
-			if(result == 1){ //이메일중복 아닌 경우
-				$('#emaillcheckMsg').css("color", "blue").html("사용 가능한 이메일입니다.");
-				$('#submitBtn').css('background', '#1161ee').attr("disabled", false);
-			}else {//이메일중복인 경우
-				$('#emaillcheckMsg').css('color', 'red').html("사용 불가능한 이메일입니다.");
-				$('#submitBtn').css('background', 'rgb(255, 255, 255, .1)').attr("disabled", true);
-			}
-		}, error : function(){console.log("이메일중복체크 실패")}
-	})//ajax닫음
-};//jquery닫음
-
 
 //비밀번호와 비밀번호확인 일치여부
 function pwCheckFunc(){

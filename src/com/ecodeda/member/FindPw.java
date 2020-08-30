@@ -12,7 +12,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class findPW {
+public class FindPw {
 	
 	private static class SMTPAuthenticator extends Authenticator {
 		public PasswordAuthentication getPasswordAuthentication() {
@@ -22,10 +22,10 @@ public class findPW {
 	}
 	
 	
-	public static void send(String title, String content, String toEmail) {
+	public void send(String content, String toEmail) {
 		
 		Properties p = new Properties();
-		p.put("mail.smtp.user", "ecodeda@gmail.com"); //본인 지메일		
+		p.put("mail.smtp.user", toEmail); //본인 지메일		
 		p.put("mail.smtp.host", "smtp.gmail.com");
 		p.put("mail.smtp.port", "465");
 		p.put("mail.smtp.starttls.enable", "true");
@@ -43,7 +43,7 @@ public class findPW {
 
 			MimeMessage msg = new MimeMessage(session);
 			String message = content;
-			msg.setSubject(title);
+			msg.setSubject("(주)이코드다 임시비밀번호 발급안내");
 			
 			Address fromAddr = new InternetAddress("noreply.ecodeda@gmail.com"); //보내는사람
 			msg.setFrom(fromAddr);
@@ -63,8 +63,7 @@ public class findPW {
 			Random myRandom = new Random();
 			int rNum = myRandom.nextInt(100)*3;
 			
-			send("(주)이코드다 임시비밀번호 발급안내", "임시 비밀번호 입니다."+rNum, "ecodeda@gmail.com");
-			System.out.println("임시비밀번호발급완료")
-			;
+			//send("임시 비밀번호 입니다."+rNum, "ecodeda@gmail.com");
+			System.out.println("임시비밀번호발급완료");
 		}
 	}

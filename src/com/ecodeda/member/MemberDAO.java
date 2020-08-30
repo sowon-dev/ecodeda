@@ -59,28 +59,7 @@ public class MemberDAO {
 			closeDB();
 		}
 	}//insertMember메서드닫음
-	
-	//회원가입시 아이디중복체크(서블릿이용 - 실패)
-	public int registerCheck(String email){
-		try{
-			con = getCon();
-			sql = "select * from ecod_member where email=?";
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, email);
-			rs = pstmt.executeQuery();
-			if(rs.next()){ //이미 존재하는 회원인 경우
-				return 0;
-			}else{ //가입 가능한 경우
-				return 1;
-			}
-		}catch(Exception e){
-			e.printStackTrace();
-		} finally {
-			closeDB();
-		}
-		return -1; //데이터 베이스 오류
-	}
-	
+		
 	//회원가입시 아이디중복체크(jsp이용)
 	public int joinIdCheck(String email){
 		int result = -1;
@@ -244,5 +223,29 @@ public class MemberDAO {
 	}//delete닫힘
 	
 	//임시비밀번호발급
+	public int findPw(String email, String name, String phone){
+		int result = -1;
+		try {
+			con = getCon();
+			sql = "select phone from ecod_member where email=? and name=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, email);
+			pstmt.setString(2, name);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				if(phone.equals(rs.getString("phone"))){
+					result = 1;
+				}else{
+					result = 0;
+				}
+			}			
+			System.out.println("임시비밀번호발급 : "+result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+		return result;
+	}//end of findPw
 	
 }//MemberDAO닫음

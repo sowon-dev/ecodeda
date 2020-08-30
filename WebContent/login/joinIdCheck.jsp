@@ -8,7 +8,7 @@
 <title>회원가입 아이디중복체크</title>
 <link href="login.css" rel="stylesheet" type="text/css">
 <!--favicon -->
-<link rel="icon" type="image/x-icon" href="resources/assets/img/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="../resources/assets/img/favicon.ico" />
 </head>
 <body style="width:360px;height:387px">
 <%//1. 한글처리 & 받아온 파라미터 변수화
