@@ -17,7 +17,7 @@ public class FindPw {
 	private static class SMTPAuthenticator extends Authenticator {
 		public PasswordAuthentication getPasswordAuthentication() {
 			//지메일 아이디 , 비밀번호
-			return new PasswordAuthentication("noreply.ecodeda@gmail.com", "gecodeda.11"); //보내는 사람
+			return new PasswordAuthentication("noreply.ecodeda@gmail.com", "geocodeda.11"); //보내는 사람
 		}
 	}
 	
