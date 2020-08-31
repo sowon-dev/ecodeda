@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -276,7 +277,7 @@ public class MemberDAO {
 		}
 	}//updatePw닫힘
 	
-	//비밀번호 변경
+	//유저가 직접 비밀번호 변경
 	public void updatePwbyUser(String email, String pw){
 		try {
 			con = getCon();
@@ -295,5 +296,40 @@ public class MemberDAO {
 			closeDB();
 		}
 	}//updatePwbyUser닫힘
+	
+	//8.getMemberList구현
+	public ArrayList getMemberList(){
+		
+		//가변길이 배열 생성
+		ArrayList memberList = new ArrayList(); 
+		
+		try {
+			con = getCon();
+			sql = "select * from ecod_member";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()){
+				MemberBean mb = new MemberBean();//1.MemberBean객체생성
+				mb.setEmail(rs.getString("email"));
+				mb.setPw(rs.getString("pw"));
+				mb.setName(rs.getString("name"));
+				mb.setAddr(rs.getString("addr"));
+				mb.setPhone(rs.getString("phone"));
+				mb.setReg_date(rs.getTimestamp("reg_date"));
+				//여기까지가 한 행의 데이터를 저장한 것임. while로 모든 행을 반복
+				
+				//가변배열(ArrayList)에 위의 데이터 저장
+				//즉 배열 한칸에 회원 1명의 정보를 저장함.
+				memberList.add(mb); //업캐스팅 (MemberBean -> Object)
+				//System.out.println(memberList);
+			}
+			System.out.println("정보검색완료");			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally{
+			closeDB();
+		}
+		return memberList;
+	}//getMemberList닫힘
 	
 }//MemberDAO닫음

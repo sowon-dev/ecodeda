@@ -17,7 +17,7 @@ String email = (String) session.getAttribute("email");
 %>
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="../resources/assets/img/navbar-logo.svg" alt="" /></a>
+        <a class="navbar-brand js-scroll-trigger" href="../main/main.jsp"><img src="../resources/assets/img/navbar-logo.svg" alt="" /></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" 
         		aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             	메뉴

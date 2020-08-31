@@ -69,8 +69,8 @@ if(mb != null){
 			<input type="button" class="btn btn-primary btn-xl text-uppercase" value="회원탈퇴" class="button" onclick="location.href='deleteForm.jsp'" style="padding:1rem 1.2rem">
 			<!-- 관리자일때만 메뉴확인가능 -->
 			<% if(email != null){
-				if(email.equals("admin")){ %>
-				<input type="button" class="btn btn-primary btn-xl text-uppercase" value="회원전체목록(관리자용)" class="button" onclick="location.href='memberList.jsp'" style="padding:1rem 1.2rem">
+				if(email.equals("admin@admin.com")){ %>
+				<input type="button" class="btn btn-primary btn-xl text-uppercase" value="회원전체목록(관리자용)" class="button" onclick="location.href='../member/memberList.jsp'" style="padding:1rem 1.2rem">
 			<%
 				}
 			}
