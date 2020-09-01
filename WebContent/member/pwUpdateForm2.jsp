@@ -30,7 +30,7 @@ if( email == null ){
 		<input type="text" class="lableMe" value="비밀번호확인" style="width: 142px;" readonly/>
 		<input type="password" name="pw2" class="inputMe" data-type="password" onkeyup="pwCheckFunc()" placeholder="비밀번호를 한  번 더  확인하세요"><br>
 		<div id="pwCheckFuncMsg" style="font-size:12px; display:none; margin-bottom:-5px; margin-bottom:5px; font-weight:bold; text-align:center;"></div>
-		<input type="submit" value="비밀번호 변경" class="btnn">
+		<input type="submit" value="비밀번호 변경" id="submitBtn" class="btnn">
 		<input type="button" value="홈으로" class="btnn" onclick="location.href='../main/main.jsp'">
 	</form>
 </fieldset>
@@ -57,10 +57,10 @@ function pwCheckFunc(){
     let pwd2 = $("input[name=pw2]").val();
     if (pwd1 == pwd2) { //비번이 일치할 경우
     	$('#pwCheckFuncMsg').css({visibility: 'visible', display: 'block', color:'blue'}).text("비밀번호가 일치합니다.");
-    	$('#submitBtn').css('background', '#1161ee').attr("disabled", false);
+    	$('#submitBtn').attr("disabled", false);
     } else { //비번이 불일치할 경우
     	$('#pwCheckFuncMsg').css({visibility: 'visible', display: 'block', color:'red'}).text("비밀번호가 일치하지않습니다.");           
-    	$('#submitBtn').css('background', 'rgb(255, 255, 255, .1)').attr("disabled", true);
+    	$('#submitBtn').attr("disabled", true);
     }
 }
 </script>
