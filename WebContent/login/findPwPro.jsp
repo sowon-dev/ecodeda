@@ -25,7 +25,7 @@ if(result == 1){
 	FindPw fp = new FindPw();
 	MakeRandomNum r = new MakeRandomNum();
 	String rNum = r.excuteGenerate();
-	fp.send("(주)이코드다에서 고객님의 요청으로 발행된 임시 비밀번호입니다. 본인이 아닌 경우 (주)이코드다로 유선연락주세요.임시 비밀번호: "+rNum, email);
+	fp.send("(주)이코드다에서 고객님의 요청으로 발행된 임시 비밀번호입니다. \n 본인이 아닌 경우 (주)이코드다로 유선연락주세요.\n 임시 비밀번호: "+rNum, email);
 	mdao.updatePw(email, rNum);
 	%>
 	<script type="text/javascript">
