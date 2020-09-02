@@ -71,8 +71,9 @@
 
 <script type="text/javascript">
 
-<!-- 유효성체크 : 데이터 빈공백체크(id와 성별) -->
-if(document.fr.email.value =="" || document.fr.email.value.length < 0){
+//todo : 모든 input태그에 입력값이 없으면 회원가입 버튼 비활성화(.attr("disabled", true))
+<!-- 유효성체크 : 데이터 빈공백체크-->
+if(document.fr.email.value =="" || document.fr.email.value.length < 0 || document.fr.name.value == "" || document.fr.phone.value=="" ){
 	document.getElementById("submitBtn").disabled = true;
 	document.getElementById("submitBtn").style.background = 'rgb(255, 255, 255, .1)';
 }
@@ -107,7 +108,6 @@ function pwCheckFunc(){
     }
 }
 
-//todo : 모든 input태그에 입력값이 없으면 회원가입 버튼 비활성화(.attr("disabled", true))
 
 //도로명주소 API사용
 function daumPostcode() {
