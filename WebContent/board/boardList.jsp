@@ -78,18 +78,17 @@ String email = (String) session.getAttribute("email");
 		<th>작성일</th>
 	</tr>
 	<tr>
-		<!-- 페이지 역순으로 나타내기  -->
-<%-- 	<c:forEach items="${boardList }" var="board" varStatus="status">
-		<td> ${paginationInfo.totalRecordCount - ((paginationInfo.currentPageNo-1) * paginationInfo.recordCountPerPage + status.index) }</td>
-		</c:forEach> --%>
-		<%//반복문
+		<%//반복문원래있던 자리
+		final String EMAIL_PATTERN = "([\\w.]{2})(?:[\\w.]*)(@.*)";
+		String emailMasking;
+		/* 페이지 역순으로 나타내기  */
 		for(int i=0;i<boardList.size(); i++){
 			BoardBean bb = (BoardBean) boardList.get(i);
-			
-			final String EMAIL_PATTERN = "([\\w.]{2})(?:[\\w.]*)(@.*)";
-			String emailMasking = bb.getEmail().replaceAll(EMAIL_PATTERN, "$1****"); //항상 6자리출력
+			/* 이메일 포맷팅  */
+			emailMasking = bb.getEmail().replaceAll(EMAIL_PATTERN, "$1****"); //항상 6자리출력
 		%>
-		<td><%=bb.getBno()%></td>
+		<!-- 페이지 역순으로 나타내기  -->
+		<td><%=cnt - (currentPage-1)*pageSize - i%></td>
 		<td>
 		<%
 		int wid = 0;
