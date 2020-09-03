@@ -10,7 +10,7 @@
 <!--favicon -->
 <link rel="icon" type="image/x-icon" href="../resources/assets/img/favicon.ico" />
 </head>
-<body style="width:360px;height:387px">
+<body style="width:360px;height:387px;overflow:hidden;">
 <%//1. 한글처리 & 받아온 파라미터 변수화
 request.setCharacterEncoding("UTF-8");
 String email = request.getParameter("userid");

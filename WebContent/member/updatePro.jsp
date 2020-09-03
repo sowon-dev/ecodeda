@@ -21,7 +21,7 @@ if (email == null) {
 MemberDAO mdao = new MemberDAO();
 //4. 데이터처리 : 1-수정완료, 0-비번오류, -1-아이디없음
 int result = mdao.updateMember(mb);
-System.out.println("updatePro의 mb가 이메일을 가져올까요? : "+mb+", result: "+result);
+//System.out.println("updatePro의 mb가 이메일을 가져올까요? : "+mb+", result: "+result);
 PrintWriter ot = response.getWriter();
 response.setContentType("text/html; charset=UTF-8");
 if(result == 1){

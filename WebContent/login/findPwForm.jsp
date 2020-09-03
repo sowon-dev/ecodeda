@@ -15,7 +15,7 @@
 <%//1. 한글처리 & 받아온 파라미터 변수화
 request.setCharacterEncoding("UTF-8");
 %>
-<!-- 4.팝업창구현  -->
+<!-- 팝업창구현  -->
 <div class="card">
     <div class="login-box">
         <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">비밀번호 찾기</label> 

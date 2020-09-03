@@ -21,7 +21,7 @@ ReviewDAO rdao = new ReviewDAO();
 int cnt = rdao.getReviewCount();
 
 //7. 페이징처리 (이미 유명한 알고리즘 공식, 사용법만 알면 됨)
-int pageSize = 10; 
+int pageSize = 5; 
 //7-2. 지금 내가 몇페이지에 있는 확인
 //페이지번호는 숫자인데 왜 String으로 하는지 ? => 연산을 할 것이 아니라서
 String pageNum = request.getParameter("pageNum");

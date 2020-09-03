@@ -20,10 +20,8 @@ BoardDAO bdao = new BoardDAO();
 int cnt = bdao.getBoardCount();
 
 //7. 페이징처리 (이미 유명한 알고리즘 공식, 사용법만 알면 됨)
-//7-1. 한 페이지에서 보여줄 글의 개수 설정(5개, 변경가능)
 int pageSize = 10; 
 //7-2. 지금 내가 몇페이지에 있는 확인
-//페이지번호는 숫자인데 왜 String으로 하는지 ? => 연산을 할 것이 아니라서
 String pageNum = request.getParameter("pageNum");
 //7-3. 페이지번호정보가 없을 경우 내가 보는 페이지가 첫페이지가 되도록
 if(pageNum == null){ 
@@ -44,8 +42,6 @@ int endRow= currentPage * pageSize;
 //System.out.println(bdao.getBoardList());
 ArrayList boardList = null;
 if(cnt != 0){
-	//일반
-	//boardList = bdao.getBoardList();
 	//7-6. 페이징 처리한 리스트 호출 => getBoardList()메서드만들기(메서드 오버로딩)
 	boardList = bdao.getBoardList(startRow, pageSize);
 } 

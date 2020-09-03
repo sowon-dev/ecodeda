@@ -64,7 +64,7 @@ String emailMasking = bb.getEmail().replaceAll(EMAIL_PATTERN, "$1****");
 		</tr>
 		<tr>
 			<th>내용</th>
-			<td colspan="3" height="300px" width="700px"><%=bb.getContent()%></td>
+			<td colspan="3" height="300px" width="700px" style="white-space:pre;"><%=bb.getContent()%></td>
 		</tr>
 		<tr>
 			<td colspan="4" style="text-align:center">

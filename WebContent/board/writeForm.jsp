@@ -16,7 +16,6 @@
 <%
 String email = (String) session.getAttribute("email");
 
-
 if( email == null){
 	%>
 	<script type="text/javascript">
@@ -26,15 +25,6 @@ if( email == null){
 	<%
 }
 
-/*
-		String email = "aaccc@bbb";
-		String[] emailFormat = email.split("@"); 
-		String emailMasking = emailFormat[0];
-		System.out.println(emailMasking);
-		String last3 = emailMasking.substring(2, emailMasking.length());
-		System.out.println(last3);		
-		System.out.println("마킹된 폰번 : "+emailMasking.replace(last3, "***"));
-*/
 %>
 <fieldset id="fieldsetMe">
 <legend id="legendMe">게시판 글쓰기</legend>

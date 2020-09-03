@@ -25,8 +25,8 @@ public class FindPw {
 	public void send(String content, String toEmail) {
 		
 		Properties p = new Properties();
-		p.put("mail.smtp.user", toEmail); //본인 지메일		
-		p.put("mail.smtp.host", "smtp.gmail.com");
+		p.put("mail.smtp.user", toEmail); //받는 사람 지메일
+		p.put("mail.smtp.host", "smtp.gmail.com"); //지메일만 가능
 		p.put("mail.smtp.port", "465");
 		p.put("mail.smtp.starttls.enable", "true");
 		p.put("mail.smtp.auth", "true");
@@ -43,12 +43,12 @@ public class FindPw {
 
 			MimeMessage msg = new MimeMessage(session);
 			String message = content;
-			msg.setSubject("(주)이코드다 임시비밀번호 발급안내");
+			msg.setSubject("(주)이코드다 임시비밀번호 발급안내"); //이메일 제목
 			
 			Address fromAddr = new InternetAddress("noreply.ecodeda@gmail.com"); //보내는사람
 			msg.setFrom(fromAddr);
 			
-			Address toAddr = new InternetAddress(toEmail); 
+			Address toAddr = new InternetAddress(toEmail);  //받는 사람
 			msg.addRecipient(Message.RecipientType.TO, toAddr);
 			msg.setContent(message, "text/plain;charset=KSC5601");
 			
