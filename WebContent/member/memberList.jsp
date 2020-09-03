@@ -46,6 +46,7 @@ ArrayList memberList = mdao.getMemberList();
 		//size()메서드는 배열의 요소의 갯수를 리턴
 		for(int i=0;i<memberList.size(); i++){
 			MemberBean mb = (MemberBean) memberList.get(i);
+			if(!mb.getEmail().equals("admin@admin.com")){
 		%>
 		<tr>
 			<td><%=mb.getEmail() %></td>
@@ -56,7 +57,7 @@ ArrayList memberList = mdao.getMemberList();
 			<td><%=mb.getReg_date() %></td>
 		</tr>
 		<%
-		}
+		}}
 		%>
 	</div>
 </table>
