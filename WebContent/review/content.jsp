@@ -70,12 +70,13 @@ String emailMasking = rb.getEmail().replaceAll(EMAIL_PATTERN, "$1****");
 				<% 
 				email = (String) session.getAttribute("email");//object를 string으로 다운캐스팅
 				//2. 아이디가 존재하면서 이름과 아이디가 같은 경우
-				if( email != null && email.equals(rb.getEmail())){
+				if( email != null){ 
+					if(email.equals(rb.getEmail()) || email != null && email.equals("admin@admin.com")){
 					%>
 				<input type="button" value="수강후기 수정" class="btnn" onclick="location.href='updateForm.jsp?bno=<%=rb.getBno()%>&pageNum=<%=pageNum%>'">
 				<input type="button" value="수강후기 삭제" class="btnn" onclick="location.href='deleteForm.jsp?bno=<%=rb.getBno()%>&pageNum=<%=pageNum%>'">
 					<%
-				}
+				}}
 				%>
 				<input type="button" value="목록으로" class="btnn" onclick="location.href='reviewList.jsp?pageNum=<%=pageNum%>'">
 			</td>
