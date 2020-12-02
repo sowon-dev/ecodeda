@@ -7,10 +7,9 @@
 # 💻 개발환경
 |종류||
 |:---:|:---:|
-|언어|Java, JSP(Model 1), JS, jQuery, Ajax, HTML,CSS|
+|언어|Java ver 1.8, JSP(Model 1), JS, jQuery, HTML/CSS|
 |SERVER|Tomcat ver 8.5|
 |DBMS|MySQL ver 8.0.21|
-|TOOL|Eclipes Neon|
 
 # 💻 Software Development Process
 Kanban using [Azure DevOps Services](https://azure.microsoft.com/en-us/services/devops/)
