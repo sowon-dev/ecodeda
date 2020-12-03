@@ -29,7 +29,7 @@ if(result == 1){
 }else if(result == 0){
 	%>
 	<script type="text/javascript">
-		alert("비밀번호 오류");
+		alert("비밀번호가 일치하지않습니다.");
 		history.back();
 	</script>
 	<% 

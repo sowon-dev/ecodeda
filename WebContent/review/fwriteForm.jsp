@@ -41,7 +41,7 @@ MemberBean mb = mdao.getMember(email);
 			<input type="text" class="lableMe" value="작성자" readonly/>
 			<input type="text" name="name" class="inputMe" value="<%=mb.getName() %>" readonly><br>
 			<input type="text" class="lableMe" value="비밀번호 " readonly/>
-			<input type="password" name="pw" class="inputMe" required><br>
+			<input type="password" name="pw" class="inputMe" required ><br>
 			<input type="text" class="lableMe" value="제목" readonly/>
 			<input type="text" name="subject" maxlength="15" class="inputMe" required ><br>
 			<input type="text" class="lableMe" value="이미지" readonly/>
@@ -64,7 +64,15 @@ MemberBean mb = mdao.getMember(email);
 	        f.subject.focus();
 	        return;
 	    }
-	    f.subject.value = str;
+	    //f.subject.value = str;
+	    
+	    str = f.pw.value;
+	    str = str.trim();
+	    if(!str) {
+	        alert("비밀번호를 입력하세요.");
+	        f.pw.focus();
+	        return;
+	    }
 	    str = f.file.value;
 	    if(!str) {
 	        alert("이미지 파일은 필수입니다. 자신의 사진이 아닐경우 무통보삭제조치하며 적립금이 자동으로 회수됩니다.");

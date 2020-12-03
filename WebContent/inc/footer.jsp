@@ -6,7 +6,7 @@
      <div class="container">
          <div class="row align-items-center">
              <div class="col-lg-4 text-lg-left">
-             	<div>(주) 이코드다 | 사업자번호 606-86-12345 | 통신판매업</div> 
+             	<div>(주) 이코드다 | 사업자번호 123-00-12345 | 통신판매업</div> 
              	<div>부산광역시 부산진구 동천로 109 삼한골든빌딩 7층</div>
              </div>
              <div class="col-lg-4 my-3 my-lg-0">
